@@ -19,12 +19,13 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
 
+
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/grid.css">
     <link rel="stylesheet" href="../css/unity.css">
     <link rel="stylesheet" href="../css/playList.css">
-
-
+    <link rel="stylesheet" href="../css/unityResponsive.css">
+    <link rel="stylesheet" href="../css/playlistResponsive.css">
 
 </head>
 
@@ -39,7 +40,10 @@
                         src="https://ui8-unity-gaming.herokuapp.com/img/logo.svg" alt="">
                 </a>
                 <div class="sidebar__burger" id="sidebar__burger">
-                    <ion-icon size="large" name="reorder-three-outline"></ion-icon>
+                    <ion-icon class="sidebar__buger_dots" id="sidebar__buger_dots" size="large"
+                        name="reorder-three-outline"></ion-icon>
+                    <ion-icon class="sidebar__buger_close" id="sidebar__buger_close" size="large" name="close">
+                    </ion-icon>
                 </div>
             </div>
 
@@ -232,8 +236,11 @@
 
         <div class="page__wrapper" id="page__wrapper">
             <div class="header">
+                <div class="header__showSidebar">
+                    <ion-icon class="showSidebar_btn" id="showSidebar_btn" name="reorder-three-outline"></ion-icon>
+                </div>
                 <div class="header__item header__browse">
-                    <div class="header__head" id="container" onclick="showHeaderBody(0)">
+                    <div class="header__head" id="head_browse">
                         <div class="header__icon">
                             <ion-icon name="compass-outline"></ion-icon>
                         </div>
@@ -242,7 +249,7 @@
                             <ion-icon name="chevron-down-outline" class="chevron" id="chevron"></ion-icon>
                         </div>
                     </div>
-                    <div class="header__body">
+                    <div class="header__body" id="body_browse">
                         <a href="" class="header__line">
                             <div class="header__icon">
                                 <ion-icon name="rocket-outline"></ion-icon>
@@ -283,22 +290,27 @@
                 </div>
 
                 <div class="header__search">
-                    <div class="header__head" onclick="showHeaderBody(1)">
+                    <div class="header__search_show_btn">
                         <ion-icon name="search-outline"></ion-icon>
+                    </div>
+                    <div class="header__head header__head_search " id="head_search">
+                        <button type="submit" class="header__search_br">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </button>
                         <input class="header__input" type="search" name="" id="header__search_bar"
                             placeholder="Search Everything">
                     </div>
-                    <div class="header__body">
+                    <!-- <div class="header__body" id="body_search">
 
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="header__control">
                     <div class="header__item header__item_add">
-                        <div class="header__head" onclick="showHeaderBody(2)">
+                        <div class="header__head" id="head_item-add">
                             <ion-icon name="add-circle-outline"></ion-icon>
                         </div>
-                        <div class="header__body ">
+                        <div class="header__body " id="body_item-add">
                             <a href="" class="header__line">
                                 <div class="header__icon">
                                     <ion-icon name="videocam-outline"></ion-icon>
@@ -322,10 +334,10 @@
                     </div>
 
                     <div class="header__item header__item_notifications">
-                        <div class="header__head" onclick="showHeaderBody(3)">
+                        <div class="header__head" id="head_item-noti">
                             <ion-icon name="notifications-outline"></ion-icon>
                         </div>
-                        <div class="header__body ">
+                        <div class="header__body" id="body_item-noti">
                             <div class="notifications">
                                 <div class="notifications__caption">Recent Notification</div>
                                 <div class="notifications__list">
@@ -450,10 +462,10 @@
                 </div>
 
                 <div class="header__item header__user">
-                    <div class="header__head" onclick="showHeaderBody(4)">
+                    <div class="header__head" id="head_user">
                         <img src="https://ui8-unity-gaming.herokuapp.com/img/avatar.png" alt="">
                     </div>
-                    <div class="header__body ">
+                    <div class="header__body " id="body_user">
                         <a href="" class="header__link">
                             <div class="header__icon">
                                 <ion-icon name="person-outline"></ion-icon>
@@ -592,7 +604,8 @@
 
                     <div class="player__wrapper">
                         <div class="player__container">
-                            <div class="player__view" style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/bg-player.png);">
+                            <div class="player__view"
+                                style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/bg-player.png);">
                                 <div class="player__counter">24L Watching</div>
                                 <button class="player__toggle ">
                                     <ion-icon class="icon icon-play" name="play"></ion-icon>
@@ -600,14 +613,14 @@
                                 </button>
                                 <div class="player__control">
                                     <div class="player__actions">
-                                        
+
                                         <button class="player__action">
                                             <ion-icon name="play"></ion-icon>
                                             <ion-icon name="pause"></ion-icon>
                                         </button>
 
                                         <div class="player__volume">
-                                            
+
                                             <button class="player__action">
                                                 <ion-icon name="volume-high"></ion-icon>
                                                 <ion-icon name="volume-mute"></ion-icon>
@@ -622,7 +635,9 @@
                                     </div>
 
                                     <div class="player__actions">
-                                        <button class="player__action"><ion-icon name="settings"></ion-icon></button>
+                                        <button class="player__action">
+                                            <ion-icon name="settings"></ion-icon>
+                                        </button>
                                         <button class="player__action"></button>
                                         <button class="player__action">
                                             <ion-icon name="scan"></ion-icon>
@@ -631,7 +646,7 @@
                                     </div>
 
                                 </div>
-                            </div> 
+                            </div>
                             <!-- <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="vv6fFtQdoEA"></div> -->
 
 
@@ -646,7 +661,8 @@
                                 <div class="player__parameters">
                                     <div class="player__parameter">
                                         <div class="player__icon">
-                                            <img class="player__pic	" src="https://ui8-unity-gaming.herokuapp.com/img/league-of-legends.png"
+                                            <img class="player__pic	"
+                                                src="https://ui8-unity-gaming.herokuapp.com/img/league-of-legends.png"
                                                 alt="">
                                         </div>
                                         <div class="player__text">League of Legends®</div>
@@ -659,34 +675,177 @@
                         </div>
                         <div class="player__list">
                             <a href="" class="player__preview">
-                                <img class="player__img" src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
                             </a>
                             <a href="" class="player__preview">
-                                <img class="player__img" src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
                             </a>
                             <a href="" class="player__preview">
-                                <img class="player__img" src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
                             </a>
                             <a href="" class="player__preview">
-                                <img class="player__img" src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
                             </a>
                             <a href="" class="player__preview">
-                                <img class="player__img" src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
                             </a>
                             <a href="" class="player__preview">
-                                <img class="player__img" src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
                             </a>
                             <a href="" class="player__preview">
-                                <img class="player__img" src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
                             </a>
                             <a href="" class="player__preview">
-                                <img class="player__img" src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
                             </a>
                             <a href="" class="player__preview">
-                                <img class="player__img" src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                            </a>
+                            <a href="" class="player__preview">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                            </a>
+                            <a href="" class="player__preview">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                            </a>
+                            <a href="" class="player__preview">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                            </a>
+                            <a href="" class="player__preview">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                            </a>
+                            <a href="" class="player__preview">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                            </a>
+                            <a href="" class="player__preview">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                            </a>
+                            <a href="" class="player__preview">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                            </a>
+                            <a href="" class="player__preview">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
+                            </a>
+                            <a href="" class="player__preview">
+                                <img class="player__img"
+                                    src="https://ui8-unity-gaming.herokuapp.com/img/player-pic-1.png" alt="">
                             </a>
                         </div>
-                        <div class="player__arrows"></div>
+                        <div class="player__arrows">
+                            <div class="player__arrow">
+                                <ion-icon name="chevron-back-outline"></ion-icon>
+                            </div>
+                            <div class="player__arrow">
+                                <ion-icon name="chevron-forward-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="games">
+                        <div class="games__head">
+
+                            <div class="games__title h5">All Your Playlist</div>
+
+                            <div class="games__field field">
+                                <div class="field__wrap">
+                                    <select class="field__select">
+                                        <option>Added Time</option>
+                                        <option>New</option>
+                                        <option>Free</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="games__list">
+                            <a class="games__item" href="#">
+                                <div class="games__preview"><img class="games__pic" src="https://ui8-unity-gaming.herokuapp.com/img/game-4.png"></div>
+                                <div class="games__details">
+                                    <div class="games__title">Call of Duty®</div>
+                                    <div class="games__category">Shooting</div>
+                                    <div class="status orange">2.8K viewers</div>
+                                </div>
+                            </a>
+                            <a class="games__item" href="#">
+                                <div class="games__preview"><img class="games__pic" src="https://ui8-unity-gaming.herokuapp.com/img/game-4.png"></div>
+                                <div class="games__details">
+                                    <div class="games__title">The Dota 2</div>
+                                    <div class="games__category">eSport</div>
+                                    <div class="status orange">2.8K viewers</div>
+                                </div>
+                            </a>
+                            <a class="games__item" href="#">
+                                <div class="games__preview"><img class="games__pic" src="https://ui8-unity-gaming.herokuapp.com/img/game-4.png"></div>
+                                <div class="games__details">
+                                    <div class="games__title">League of Legends®dkfbndfklbndfbkldfjfklgjfgklf</div>
+                                    <div class="games__category">Online Game</div>
+                                    <div class="status orange">2.8K viewers</div>
+                                </div>
+                            </a>
+                            <a class="games__item" href="#">
+                                <div class="games__preview"><img class="games__pic" src="https://ui8-unity-gaming.herokuapp.com/img/game-4.png"></div>
+                                <div class="games__details">
+                                    <div class="games__title">Fortnite®</div>
+                                    <div class="games__category">Shooting</div>
+                                    <div class="status orange">2.8K viewers</div>
+                                </div>
+                            </a>
+                            <a class="games__item" href="#">
+                                <div class="games__preview"><img class="games__pic" src="https://ui8-unity-gaming.herokuapp.com/img/game-4.png"></div>
+                                <div class="games__details">
+                                    <div class="games__title">Call of Duty®</div>
+                                    <div class="games__category">Shooting</div>
+                                    <div class="status orange">2.8K viewers</div>
+                                </div>
+                            </a>
+                            <a class="games__item" href="#">
+                                <div class="games__preview"><img class="games__pic" src="https://ui8-unity-gaming.herokuapp.com/img/game-4.png"></div>
+                                <div class="games__details">
+                                    <div class="games__title">The Dota 2</div>
+                                    <div class="games__category">eSport</div>
+                                    <div class="status orange">2.8K viewers</div>
+                                </div>
+                            </a>
+                            <a class="games__item" href="#">
+                                <div class="games__preview"><img class="games__pic" src="https://ui8-unity-gaming.herokuapp.com/img/game-4.png"></div>
+                                <div class="games__details">
+                                    <div class="games__title">League of Legends®</div>
+                                    <div class="games__category">Online Game</div>
+                                    <div class="status orange">2.8K viewers</div>
+                                </div>
+                            </a>
+                            <a class="games__item" href="#">
+                                <div class="games__preview"><img class="games__pic" src="https://ui8-unity-gaming.herokuapp.com/img/game-4.png"></div>
+                                <div class="games__details">
+                                    <div class="games__title">Fortnite®</div>
+                                    <div class="games__category">Shooting</div>
+                                    <div class="status orange">2.8K viewers</div>
+                                </div>
+                            </a>
+
+                        </div>
+
+                        <div class="games__btns">
+                            <button class="games__btn button btn_gray btn_wide">Manage Your Playlist
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

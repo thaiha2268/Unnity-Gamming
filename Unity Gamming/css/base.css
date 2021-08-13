@@ -7,10 +7,12 @@
   --text-color: #808191;
   --text-color-dark: #fff;
   --text-color-light: #000;
-  --bg-btn-light-hover : #ff754c;
+  --bg-btn-light-hover: #ff754c;
   /* Value */
   --sidebar-width: 25.6rem;
   --sidebar-width-active: 9.6rem;
+  --header-height: 9.6rem;
+  --header-height-active: 5.6rem;
 }
 
 * {
@@ -20,6 +22,10 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+}
+
+body {
+  min-width: 280px;
 }
 
 ion-icon {
@@ -89,16 +95,18 @@ div, input, textarea, select, button, h1, h2, h3, h4, h5, h6, a, span, a:focus {
   background: #6C5DD3;
   color: #ffffff;
 }
+
 .btn_purple-light {
   background: rgba(228, 228, 228, 0.2);
   color: #3F8CFF;
 }
+
 .btn_gray {
   background: rgba(228, 228, 228, 0.1);
   color: #ffffff;
 }
 
-.page.toggle .btn_gray {
+.page.toggle .btn_gray , .page.toggle .btn_purple{
   background: #3F8CFF;
   color: #ffffff;
 }
@@ -142,3 +150,17 @@ div, input, textarea, select, button, h1, h2, h3, h4, h5, h6, a, span, a:focus {
 /* .row {
   margin-top: 1.5rem;
 } */
+
+/* 
+max-width: 320px (điện thoại di động, hiển thị chiều dọc)
+max-width: 400px (điện thoại di động, hiển thị chiều dọc)
+max-width: 600px (máy tính bảng, hiển thị chiều dọc)
+max-width: 768px (máy tính bảng loại to, hiển thị chiều dọc)
+min-width: 1025px (từ size này trở lên là danh cho desktop thông thường).
+
+max-width: 480px (điện thoại di động, hiển thị chiều ngang)
+max-width: 800px (máy tính bảng, hiển thị chiều ngang)
+max-width: 1024px (máy tính bảng loại to, hiển thị chiều ngang)
+
+
+*/

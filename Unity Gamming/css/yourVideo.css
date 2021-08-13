@@ -78,6 +78,7 @@
     height: 100%;
     opacity: 0;
     cursor: pointer;
+    border-radius: 16px;
 }
 
 .upload__btn ion-icon {
@@ -133,6 +134,11 @@
     background: #242731;
     transition: all .25s;
     color: #fff;
+}
+.page.toggle .upload__head .upload__link {
+    background: #fff;
+    color: #3F8CFF;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .upload__btns {
@@ -205,7 +211,6 @@
 
 .catalog__tags {
     display: flex;
-    flex-wrap: wrap;
     margin: -8px 0 0 -8px;
 }
 
@@ -214,9 +219,8 @@
 }
 
 .catalog__tag {
-    min-width: 200px;
     margin: 8px 0 0 8px;
-    border-radius: 8px;
+    border-radius: 16px;
     background: rgba(108, 93, 211, 0.1);
     text-align: center;
     line-height: 56px;
@@ -224,6 +228,12 @@
     font-weight: 700;
     color: #3F8CFF;
     transition: opacity .25s;
+    padding: 0 35px;
+}
+.page.toggle .catalog__tag {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    color: #3F8CFF;
 }
 
 .catalog__tag.active {
@@ -290,6 +300,9 @@
 .page.toggle .catalog .field__select {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+ .field__select{
+    height: 56px;
+}
 
 /* Check Box */
 
@@ -355,7 +368,7 @@
 /* Catalog action */
 
 .catalog__actions:not(:last-child) {
-    margin-right: 24px;
+    /* margin-right: 24px; */
 }
 
 .catalog__actions {
@@ -385,7 +398,10 @@
     margin-right: 10px;
     color: #ffffff;
 }
-
+.catalog__action_cb{
+    display: none;
+    border: none;
+}
 .catalog__views {
     display: flex;
     align-items: center;
@@ -395,8 +411,8 @@
     background: #3F8CFF;
 }
 
-.catalog__views .catalog__view:first-child {
-    margin-right: 7px;
+.catalog__views .catalog__view {
+    margin-left: 7px;
 }
 
 .catalog__views .catalog__view {
@@ -589,7 +605,12 @@
 .catalog.view .game__text {
     margin-right: 8px;
 }
-
+.catalog.view .catalog__action_btn{
+    display: none;
+}
+.catalog.view .catalog__action_cb{
+    display: block;
+}
 .page.toggle .video__actions {
     border-color: rgba(240, 243, 246, 0.1);
 }
@@ -702,6 +723,8 @@
 .catalog__sidebar .widget {
     width: calc((100% - (var(--spacing) * var(--col))) / var(--col));
     margin: calc(var(--spacing) / 2);
+    display: flex;
+    flex-direction: column;
 }
 
 .catalog.view .catalog__sidebar {
@@ -766,7 +789,9 @@
 .widget .games:not(:last-child) {
     margin-bottom: 16px;
 }
-
+.games {
+    margin-top: auto;
+}
 .games__add {}
 
 .catalog.view .games__item {
@@ -780,7 +805,10 @@
     background: rgba(228, 228, 228, 0.05);
     color: #ffffff;
     transition: all .25s;
-    padding: 10px;
+    /* padding: 10px; */
+}
+.games__item {
+    box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px, rgb(0 0 0 / 20%) 0px -3px 0px inset;
 }
 
 .widget .games__item:not(:last-child) {
@@ -805,14 +833,14 @@
 }
 
 .catalog.view .games__details {
-    max-width: 60%;
+    /* max-width: 60%; */
 }
 
 .games__details {
     padding: 10px 10px 10px 25px;
     display: flex;
     flex-direction: column;
-    max-width: 50%;
+    max-width: 60%;
 }
 
 .catalog.view .games__title {

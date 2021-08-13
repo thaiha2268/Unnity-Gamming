@@ -18,12 +18,13 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
+
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/grid.css">
     <link rel="stylesheet" href="../css/unity.css">
     <link rel="stylesheet" href="../css/trending.css">
-
-
+    <link rel="stylesheet" href="../css/unityResponsive.css">
+    <link rel="stylesheet" href="../css/trendingResponsive.css">
 
 </head>
 
@@ -38,7 +39,10 @@
                         src="https://ui8-unity-gaming.herokuapp.com/img/logo.svg" alt="">
                 </a>
                 <div class="sidebar__burger" id="sidebar__burger">
-                    <ion-icon size="large" name="reorder-three-outline"></ion-icon>
+                    <ion-icon class="sidebar__buger_dots" id="sidebar__buger_dots" size="large"
+                        name="reorder-three-outline"></ion-icon>
+                    <ion-icon class="sidebar__buger_close" id="sidebar__buger_close" size="large" name="close">
+                    </ion-icon>
                 </div>
             </div>
 
@@ -231,8 +235,11 @@
 
         <div class="page__wrapper" id="page__wrapper">
             <div class="header">
+                <div class="header__showSidebar">
+                    <ion-icon class="showSidebar_btn" id="showSidebar_btn" name="reorder-three-outline"></ion-icon>
+                </div>
                 <div class="header__item header__browse">
-                    <div class="header__head" id="container" onclick="showHeaderBody(0)">
+                    <div class="header__head" id="head_browse">
                         <div class="header__icon">
                             <ion-icon name="compass-outline"></ion-icon>
                         </div>
@@ -241,7 +248,7 @@
                             <ion-icon name="chevron-down-outline" class="chevron" id="chevron"></ion-icon>
                         </div>
                     </div>
-                    <div class="header__body">
+                    <div class="header__body" id="body_browse">
                         <a href="" class="header__line">
                             <div class="header__icon">
                                 <ion-icon name="rocket-outline"></ion-icon>
@@ -282,22 +289,27 @@
                 </div>
 
                 <div class="header__search">
-                    <div class="header__head" onclick="showHeaderBody(1)">
+                    <div class="header__search_show_btn">
                         <ion-icon name="search-outline"></ion-icon>
+                    </div>
+                    <div class="header__head header__head_search " id="head_search">
+                        <button type="submit" class="header__search_br">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </button>
                         <input class="header__input" type="search" name="" id="header__search_bar"
                             placeholder="Search Everything">
                     </div>
-                    <div class="header__body">
+                    <!-- <div class="header__body" id="body_search">
 
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="header__control">
                     <div class="header__item header__item_add">
-                        <div class="header__head" onclick="showHeaderBody(2)">
+                        <div class="header__head" id="head_item-add">
                             <ion-icon name="add-circle-outline"></ion-icon>
                         </div>
-                        <div class="header__body ">
+                        <div class="header__body " id="body_item-add">
                             <a href="" class="header__line">
                                 <div class="header__icon">
                                     <ion-icon name="videocam-outline"></ion-icon>
@@ -321,10 +333,10 @@
                     </div>
 
                     <div class="header__item header__item_notifications">
-                        <div class="header__head" onclick="showHeaderBody(3)">
+                        <div class="header__head" id="head_item-noti">
                             <ion-icon name="notifications-outline"></ion-icon>
                         </div>
-                        <div class="header__body ">
+                        <div class="header__body" id="body_item-noti">
                             <div class="notifications">
                                 <div class="notifications__caption">Recent Notification</div>
                                 <div class="notifications__list">
@@ -449,10 +461,10 @@
                 </div>
 
                 <div class="header__item header__user">
-                    <div class="header__head" onclick="showHeaderBody(4)">
+                    <div class="header__head" id="head_user">
                         <img src="https://ui8-unity-gaming.herokuapp.com/img/avatar.png" alt="">
                     </div>
-                    <div class="header__body ">
+                    <div class="header__body " id="body_user">
                         <a href="" class="header__link">
                             <div class="header__icon">
                                 <ion-icon name="person-outline"></ion-icon>
@@ -632,7 +644,6 @@
                         </div>
                     </div>
 
-
                 </div>
 
                 <div class="main__foot">
@@ -663,7 +674,15 @@
                         <div class="trending__col">
 
                             <div class="trending__filter">
-                                <div class="trending__field field mobie-show"></div>
+                                <div class="trending__field field mobie-show">
+                                    <div class="field__wrap">
+                                        <select name="" class="field__select purple" id="">
+                                            <option value="">All</option>
+                                            <option value="">Game Online</option>
+                                            <option value="">Game Offline</option>
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <div class="trending__tags">
                                     <a href="" class="trending__tag active">All</a>
@@ -705,6 +724,18 @@
                                                     </div>
 
                                                     <div class="categories__tags">
+                                                        <div class="categories__tag">Shotter</div>
+                                                        <div class="categories__tag">Shotter</div>
+                                                        <div class="categories__tag">Shotter</div>
+                                                        <div class="categories__tag">Shotter</div>
+                                                        <div class="categories__tag">Shotter</div>
+                                                        <div class="categories__tag">Shotter</div>
+                                                        <div class="categories__tag">Shotter</div>
+                                                        <div class="categories__tag">Shotter</div>
+                                                        <div class="categories__tag">Shotter</div>
+                                                        <div class="categories__tag">Shotter</div>
+                                                        <div class="categories__tag">Shotter</div>
+                                                        <div class="categories__tag">Shotter</div>
                                                         <div class="categories__tag">Shotter</div>
                                                         <div class="categories__tag">Shotter</div>
                                                         <div class="categories__tag">Shotter</div>
@@ -1245,6 +1276,20 @@
                                             </div>
                                         </a>
                                     </div>
+                                    <div class="trending__streamer">
+                                        <a href="" class="trending__user">
+                                            <div class="trending__ava"><img
+                                                    src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt="">
+                                            </div>
+                                            <div class="trending__desc">
+                                                <div class="trending__man confirm">Unity Gamming</div>
+
+                                                <div class="trending__game">Call of Durty</div>
+
+                                                <div class="status orange">2.8K viewers</div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
 
                                 <button class="trending__btn button btn_gray btn_wide">Discover More</button>
@@ -1255,7 +1300,7 @@
                                 <div class="trending__title">Trending Games</div>
 
                                 <div class="trending__group">
-                                    <div class="trending__streamer">
+                                    <div class="trending__games">
                                         <a href="" class="trending__box">
                                             <div class="trending__preview"><img class="trending__pic"
                                                     src="https://ui8-unity-gaming.herokuapp.com/img/game-pic-1.png"
@@ -1269,7 +1314,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="trending__streamer">
+                                    <div class="trending__games">
                                         <a href="" class="trending__box">
                                             <div class="trending__preview"><img class="trending__pic"
                                                     src="https://ui8-unity-gaming.herokuapp.com/img/game-pic-2.png"
@@ -1283,7 +1328,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="trending__streamer">
+                                    <div class="trending__games">
                                         <a href="" class="trending__box">
                                             <div class="trending__preview"><img class="trending__pic"
                                                     src="https://ui8-unity-gaming.herokuapp.com/img/game-pic-3.png"
@@ -1297,7 +1342,7 @@
                                         </a>
                                     </div>
 
-                                    <div class="trending__streamer">
+                                    <div class="trending__games">
                                         <a href="" class="trending__box">
                                             <div class="trending__preview"><img class="trending__pic"
                                                     src="https://ui8-unity-gaming.herokuapp.com/img/game-pic-4.png"
@@ -1311,7 +1356,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="trending__streamer">
+                                    <div class="trending__games">
                                         <a href="" class="trending__box">
                                             <div class="trending__preview"><img class="trending__pic"
                                                     src="https://ui8-unity-gaming.herokuapp.com/img/game-pic-2.png"
@@ -1324,6 +1369,34 @@
                                             </div>
                                         </a>
                                     </div>
+                                    <div class="trending__games">
+                                        <a href="" class="trending__box">
+                                            <div class="trending__preview"><img class="trending__pic"
+                                                    src="https://ui8-unity-gaming.herokuapp.com/img/game-pic-4.png"
+                                                    alt=""></div>
+
+                                            <div class="trending__details">
+                                                <div class="trending__game">League of Legends® League of Legends® League
+                                                    of Legends® </div>
+                                                <div class="trending__text">League of Legends is a team-based game with
+                                                    over 140 champions. </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="trending__games">
+                                        <a href="" class="trending__box">
+                                            <div class="trending__preview"><img class="trending__pic"
+                                                    src="https://ui8-unity-gaming.herokuapp.com/img/game-pic-2.png"
+                                                    alt=""></div>
+
+                                            <div class="trending__details">
+                                                <div class="trending__game">Counter-Strike®</div>
+                                                <div class="trending__text">Counter-Strike is a series of multiplayer
+                                                    first-person shooter video games</div>
+                                            </div>
+                                        </a>
+                                    </div>
+
                                 </div>
 
                                 <button class="trending__btn button btn_gray btn_wide">Discover More</button>

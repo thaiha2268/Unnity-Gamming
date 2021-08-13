@@ -5,7 +5,7 @@
     <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width,min initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS v5.0.2 -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -17,10 +17,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/grid.css">
     <link rel="stylesheet" href="../css/unity.css">
+    <link rel="stylesheet" href="../css/unityResponsive.css">
+
 
 
 
@@ -37,7 +39,10 @@
                         src="https://ui8-unity-gaming.herokuapp.com/img/logo.svg" alt="">
                 </a>
                 <div class="sidebar__burger" id="sidebar__burger">
-                    <ion-icon size="large" name="reorder-three-outline"></ion-icon>
+                    <ion-icon class="sidebar__buger_dots" id="sidebar__buger_dots" size="large"
+                        name="reorder-three-outline"></ion-icon>
+                    <ion-icon class="sidebar__buger_close" id="sidebar__buger_close" size="large" name="close">
+                    </ion-icon>
                 </div>
             </div>
 
@@ -230,8 +235,11 @@
 
         <div class="page__wrapper" id="page__wrapper">
             <div class="header">
+                <div class="header__showSidebar">
+                    <ion-icon class="showSidebar_btn" id="showSidebar_btn" name="reorder-three-outline"></ion-icon>
+                </div>
                 <div class="header__item header__browse">
-                    <div class="header__head" id="container" onclick="showHeaderBody(0)">
+                    <div class="header__head" id="head_browse">
                         <div class="header__icon">
                             <ion-icon name="compass-outline"></ion-icon>
                         </div>
@@ -240,7 +248,7 @@
                             <ion-icon name="chevron-down-outline" class="chevron" id="chevron"></ion-icon>
                         </div>
                     </div>
-                    <div class="header__body">
+                    <div class="header__body" id="body_browse">
                         <a href="" class="header__line">
                             <div class="header__icon">
                                 <ion-icon name="rocket-outline"></ion-icon>
@@ -281,22 +289,27 @@
                 </div>
 
                 <div class="header__search">
-                    <div class="header__head" onclick="showHeaderBody(1)">
+                    <div class="header__search_show_btn">
                         <ion-icon name="search-outline"></ion-icon>
+                    </div>
+                    <div class="header__head header__head_search " id="head_search">
+                        <button type="submit" class="header__search_br">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </button>
                         <input class="header__input" type="search" name="" id="header__search_bar"
                             placeholder="Search Everything">
                     </div>
-                    <div class="header__body">
+                    <!-- <div class="header__body" id="body_search">
 
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="header__control">
                     <div class="header__item header__item_add">
-                        <div class="header__head" onclick="showHeaderBody(2)">
+                        <div class="header__head" id="head_item-add">
                             <ion-icon name="add-circle-outline"></ion-icon>
                         </div>
-                        <div class="header__body ">
+                        <div class="header__body " id="body_item-add">
                             <a href="" class="header__line">
                                 <div class="header__icon">
                                     <ion-icon name="videocam-outline"></ion-icon>
@@ -320,10 +333,10 @@
                     </div>
 
                     <div class="header__item header__item_notifications">
-                        <div class="header__head" onclick="showHeaderBody(3)">
+                        <div class="header__head" id="head_item-noti">
                             <ion-icon name="notifications-outline"></ion-icon>
                         </div>
-                        <div class="header__body ">
+                        <div class="header__body" id="body_item-noti">
                             <div class="notifications">
                                 <div class="notifications__caption">Recent Notification</div>
                                 <div class="notifications__list">
@@ -448,10 +461,10 @@
                 </div>
 
                 <div class="header__item header__user">
-                    <div class="header__head" onclick="showHeaderBody(4)">
+                    <div class="header__head" id="head_user">
                         <img src="https://ui8-unity-gaming.herokuapp.com/img/avatar.png" alt="">
                     </div>
-                    <div class="header__body ">
+                    <div class="header__body " id="body_user">
                         <a href="" class="header__link">
                             <div class="header__icon">
                                 <ion-icon name="person-outline"></ion-icon>
@@ -715,7 +728,7 @@
                     </div>
 
                     <div class="main__line">
-                        <div class="main__progress js-main-progress" style="background-size: 85.7143% 100%;">
+                        <div class="main__progress js-main-progress" style="background-size: 85.7143%;">
 
                         </div>
                     </div>
@@ -862,6 +875,34 @@
                             </div>
                         </div>
 
+                        <!-- <div class="card">
+                            <div class="card__preview">
+                                <img class="card__pic" src="https://ui8-unity-gaming.herokuapp.com/img/card-pic-3.png"
+                                    alt="">
+                            </div>
+
+                            <div class="card__body">
+                                <div class="card__title">2020 World Champs Gaming Warzone</div>
+                                <div class="card__user">
+                                    <div class="card__ava">
+                                        <img class="card__pic"
+                                            src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt="">
+                                    </div>
+                                    <div class="card__desc">
+                                        <div class="card__man confirm">tam tran</div>
+                                        <div class="card__game">Call of Duty®</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card__foot">
+                                <div class="live">
+                                    <ion-icon name="wifi"></ion-icon>
+                                    Live
+                                </div>
+                                <div class="status blue">4.2K watching</div>
+                            </div>
+                        </div>
                         <div class="card">
                             <div class="card__preview">
                                 <img class="card__pic" src="https://ui8-unity-gaming.herokuapp.com/img/card-pic-3.png"
@@ -890,6 +931,121 @@
                                 <div class="status blue">4.2K watching</div>
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="card__preview">
+                                <img class="card__pic" src="https://ui8-unity-gaming.herokuapp.com/img/card-pic-3.png"
+                                    alt="">
+                            </div>
+
+                            <div class="card__body">
+                                <div class="card__title">2020 World Champs Gaming Warzone</div>
+                                <div class="card__user">
+                                    <div class="card__ava">
+                                        <img class="card__pic"
+                                            src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt="">
+                                    </div>
+                                    <div class="card__desc">
+                                        <div class="card__man confirm">tam tran</div>
+                                        <div class="card__game">Call of Duty®</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card__foot">
+                                <div class="live">
+                                    <ion-icon name="wifi"></ion-icon>
+                                    Live
+                                </div>
+                                <div class="status blue">4.2K watching</div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card__preview">
+                                <img class="card__pic" src="https://ui8-unity-gaming.herokuapp.com/img/card-pic-3.png"
+                                    alt="">
+                            </div>
+
+                            <div class="card__body">
+                                <div class="card__title">2020 World Champs Gaming Warzone</div>
+                                <div class="card__user">
+                                    <div class="card__ava">
+                                        <img class="card__pic"
+                                            src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt="">
+                                    </div>
+                                    <div class="card__desc">
+                                        <div class="card__man confirm">tam tran</div>
+                                        <div class="card__game">Call of Duty®</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card__foot">
+                                <div class="live">
+                                    <ion-icon name="wifi"></ion-icon>
+                                    Live
+                                </div>
+                                <div class="status blue">4.2K watching</div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="collection__paging" id="live_collection__paging">
+                        <ul class="paging__list">
+
+                            <li class="paging__arrow paging__arrow_left" id="live_paging_al">
+                                <ion-icon class="paging__icon" name="chevron-back"></ion-icon>
+                            </li>
+
+                            <li class="paging__arrow paging__arrow_right" id="live_paging_ar">
+                                <ion-icon class="paging__icon" name="chevron-forward"></ion-icon>
+                            </li>
+
+                            <li class="paging__item">
+                                <input type="radio" id="live_paging__btn" class="paging__btn live_paging__btn"
+                                    name="live_paging" value="1">
+                                <div class="paging__child">1</div>
+                            </li>
+                            <li class="paging__item">
+                                <input type="radio" id="live_paging__btn" class="paging__btn live_paging__btn"
+                                    name="live_paging" value="2">
+                                <div class="paging__child">2</div>
+                            </li>
+                            <li class="paging__item paging__item3">
+                                <input type="radio" id="live_paging__btn" class="paging__btn live_paging__btn"
+                                    name="live_paging" value="3">
+                                <div class="paging__child">3</div>
+
+                            </li>
+                            <li class="paging__item paging__item4">
+                                <input type="radio" id="live_paging__btn" class="paging__btn live_paging__btn"
+                                    name="live_paging" value="4">
+                                <div class="paging__child">4</div>
+
+                            </li>
+                            <li class="paging__item paging__item5">
+                                <input type="radio" id="live_paging__btn" class="paging__btn live_paging__btn"
+                                    name="live_paging" value="5">
+                                <div class="paging__child">5</div>
+
+                            </li>
+                            <li class="paging__item live__paging_index">
+                                <div class="paging__dot">...</div>
+                                <input type="number" name="live__paging_scroll" id="paging__scroll"
+                                    class="paging__scroll">
+                                <div class="mes_invalid">
+                                    Input invalid
+                                </div>
+                            </li>
+
+                            <li class="paging__item">
+                                <input type="radio" id="live_paging__btn" class="paging__btn live_paging__btn"
+                                    name="live_paging" value="20">
+                                <div class="paging__child">20</div>
+
+                            </li>
+
+                        </ul>
+
 
                     </div>
                 </div>
@@ -905,61 +1061,64 @@
                                 </div>
                                 <div class="user__title">add yours</div>
                             </a>
-                            <a href="" class="user__item">
-                                <div class="ava ava_online">
-                                    <img class="ava__pic" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
-                                        alt="">
-                                </div>
-                                <div class="users__title">Gabriel Erickson Gabriel EricksonGabriel EricksonGabriel
-                                    EricksonGabriel EricksonGabriel Erickson</div>
+                            <div class="user__item_group">
+                                <a href="" class="user__item">
+                                    <div class="ava ava_online">
+                                        <img class="ava__pic" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
+                                            alt="">
+                                    </div>
+                                    <div class="users__title">Gabriel Erickson Gabriel EricksonGabriel EricksonGabriel
+                                        EricksonGabriel EricksonGabriel Erickson</div>
 
-                                <div class="users__time">14m ago</div>
-                            </a>
-                            <a href="" class="user__item">
-                                <div class="ava ava_play">
-                                    <img class="ava__pic" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
-                                        alt="">
-                                </div>
-                                <div class="users__title">Gabriel EricksonEricksonEricksonEricksonEricksonErickson</div>
+                                    <div class="users__time">14m ago</div>
+                                </a>
+                                <a href="" class="user__item">
+                                    <div class="ava ava_play">
+                                        <img class="ava__pic" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
+                                            alt="">
+                                    </div>
+                                    <div class="users__title">Gabriel EricksonEricksonEricksonEricksonEricksonErickson
+                                    </div>
 
-                                <div class="users__time">14m ago</div>
-                            </a>
-                            <a href="" class="user__item">
-                                <div class="ava ava_online-blue">
-                                    <img class="ava__pic" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
-                                        alt="">
-                                </div>
-                                <div class="users__title">Gabriel Erickson </div>
+                                    <div class="users__time">14m ago</div>
+                                </a>
+                                <a href="" class="user__item">
+                                    <div class="ava ava_online-blue">
+                                        <img class="ava__pic" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
+                                            alt="">
+                                    </div>
+                                    <div class="users__title">Gabriel Erickson </div>
 
-                                <div class="users__time">14m ago</div>
-                            </a>
-                            <a href="" class="user__item">
-                                <div class="ava ava_network">
-                                    <img class="ava__pic" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
-                                        alt="">
-                                </div>
-                                <div class="users__title">Gabriel Erickson </div>
+                                    <div class="users__time">14m ago</div>
+                                </a>
+                                <a href="" class="user__item">
+                                    <div class="ava ava_network">
+                                        <img class="ava__pic" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
+                                            alt="">
+                                    </div>
+                                    <div class="users__title">Gabriel Erickson </div>
 
-                                <div class="users__time">14m ago</div>
-                            </a>
-                            <a href="" class="user__item">
-                                <div class="ava">
-                                    <img class="ava__pic" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
-                                        alt="">
-                                </div>
-                                <div class="users__title">Gabriel Erickson </div>
+                                    <div class="users__time">14m ago</div>
+                                </a>
+                                <a href="" class="user__item">
+                                    <div class="ava">
+                                        <img class="ava__pic" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
+                                            alt="">
+                                    </div>
+                                    <div class="users__title">Gabriel Erickson </div>
 
-                                <div class="users__time">14m ago</div>
-                            </a>
-                            <a href="" class="user__item">
-                                <div class="ava">
-                                    <img class="ava__pic" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
-                                        alt="">
-                                </div>
-                                <div class="users__title">Gabriel Erickson </div>
+                                    <div class="users__time">14m ago</div>
+                                </a>
+                                <a href="" class="user__item">
+                                    <div class="ava">
+                                        <img class="ava__pic" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
+                                            alt="">
+                                    </div>
+                                    <div class="users__title">Gabriel Erickson </div>
 
-                                <div class="users__time">14m ago</div>
-                            </a>
+                                    <div class="users__time">14m ago</div>
+                                </a>
+                            </div>
 
                         </div>
                     </div>
@@ -970,177 +1129,109 @@
 
                     <div class="categories__list">
 
-                        <div class="categories_left">
-                            <div class="categories__item categories__item_big">
+                        <!-- <div class="categories_left">
+                        </div> -->
+                        <div class="categories__item categories__item_big">
 
-                                <button class="slick-arrow slick-next">
-                                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                                </button>
+                            <button class="slick-arrow slick-next">
+                                <ion-icon name="chevron-forward-outline"></ion-icon>
+                            </button>
 
-                                <div class="slick-list">
-                                    <div class="categories__slide slick-slide slick-current slick-active">
-                                        <div class="categories__box">
-                                            <div class="categories__preview"
-                                                style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/categories-pic-1.png);">
-                                            </div>
+                            <div class="slick-list">
+                                <div class="categories__box">
+                                    <div class="categories__preview"
+                                        style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/categories-pic-1.png);">
+                                    </div>
 
-                                            <div class="categories__details">
-                                                <div class="categories__tags">
-                                                    <div class="categories__tag">Shotter</div>
-                                                    <div class="categories__tag">Shotter</div>
-                                                    <div class="categories__tag">Shotter</div>
-                                                </div>
-
-                                                <div class="categories__title">Fortnite</div>
-
-                                                <div class="status green">4.9K Viewers</div>
-
-                                                <button class="categories__btn button btn_purple">follow</button>
-                                            </div>
+                                    <div class="categories__details">
+                                        <div class="categories__tags">
+                                            <div class="categories__tag">Shotter</div>
+                                            <div class="categories__tag">Shotter</div>
+                                            <!-- <div class="categories__tag">Shotter</div>
+                                            <div class="categories__tag">Shotter</div>
+                                            <div class="categories__tag">Shotter</div>
+                                            <div class="categories__tag">Shotter</div> -->
                                         </div>
 
-                                    </div>
+                                        <div class="categories__title">Fortnite</div>
 
-                                    <!-- <div class="categories__slide slick-slide" hidden>
-                                                <div class="categories__box">
-                                                    <div class="categories__preview"
-                                                        style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/categories-pic-1.png);">
-                                                    </div>
-    
-                                                    <div class="categories__details">
-                                                        <div class="categories__tags">
-                                                            <div class="categories__tag">Shotter</div>
-                                                            <div class="categories__tag">Shotter</div>
-                                                            <div class="categories__tag">Shotter</div>
-                                                        </div>
-    
-                                                        <div class="categories__title">Fortnite</div>
-    
-                                                        <div class="status green">4.9K Viewers</div>
-    
-                                                        <button class="categories__btn button btn_gray">follow</button>
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-    
-                                            <div class="categories__slide slick-slide" hidden>
-                                                <div class="categories__box">
-                                                    <div class="categories__preview"
-                                                        style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/categories-pic-1.png);">
-                                                    </div>
-    
-                                                    <div class="categories__details">
-                                                        <div class="categories__tags">
-                                                            <div class="categories__tag">Shotter</div>
-                                                            <div class="categories__tag">Shotter</div>
-                                                            <div class="categories__tag">Shotter</div>
-                                                        </div>
-    
-                                                        <div class="categories__title">Fortnite</div>
-    
-                                                        <div class="status green">4.9K Viewers</div>
-    
-                                                        <button class="categories__btn button btn_gray">follow</button>
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-    
-                                            <div class="categories__slide slick-slide" hidden>
-                                                <div class="categories__box">
-                                                    <div class="categories__preview"
-                                                        style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/categories-pic-1.png);">
-                                                    </div>
-    
-                                                    <div class="categories__details">
-                                                        <div class="categories__tags">
-                                                            <div class="categories__tag">Shotter</div>
-                                                            <div class="categories__tag">Shotter</div>
-                                                            <div class="categories__tag">Shotter</div>
-                                                        </div>
-    
-                                                        <div class="categories__title">Fortnite</div>
-    
-                                                        <div class="status green">4.9K Viewers</div>
-    
-                                                        <button class="categories__btn button btn_gray">follow</button>
-                                                    </div>
-                                                </div>
-    
-                                            </div> -->
+                                        <div class="status green">4.9K Viewers</div>
+
+                                        <button class="categories__btn button btn_purple">follow</button>
+                                    </div>
                                 </div>
 
-                                <button class="slick-arrow slick-prev">
-                                    <ion-icon name="chevron-back-outline"></ion-icon>
-                                </button>
+                            </div>
+
+                            <button class="slick-arrow slick-prev">
+                                <ion-icon name="chevron-back-outline"></ion-icon>
+                            </button>
 
 
+                        </div>
+
+                        <div class="categories__item categories__item_sm categories__item_sm1">
+                            <div class="categories__preview"
+                                style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/categories-pic-1.png);">
+                            </div>
+
+                            <div class="categories__details">
+                                <div class="categories__tags">
+                                    <div class="categories__tag">Shotter</div>
+                                </div>
+
+                                <div class="categories__title">League of Legends®</div>
+
+                                <div class="status green">4.9K Viewers</div>
+
+                                <button class="categories__btn button btn_gray">follow</button>
                             </div>
                         </div>
 
-                        <div class="categories_right">
-                            <div class="categories__item categories__item_sm">
-                                <div class="categories__preview"
-                                    style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/categories-pic-1.png);">
-                                </div>
-
-                                <div class="categories__details">
-                                    <div class="categories__tags">
-                                        <div class="categories__tag">Shotter</div>
-                                    </div>
-
-                                    <div class="categories__title">Fortnite</div>
-
-                                    <div class="status green">4.9K Viewers</div>
-
-                                    <button class="categories__btn button btn_gray">follow</button>
-                                </div>
+                        <div class="categories__item categories__item_sm categories__item_sm2">
+                            <div class="categories__preview"
+                                style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/categories-pic-1.png);">
                             </div>
 
-                            <div class="categories__item categories__item_sm">
-                                <div class="categories__preview"
-                                    style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/categories-pic-1.png);">
+                            <div class="categories__details">
+                                <div class="categories__tags">
+                                    <div class="categories__tag">Shotter</div>
                                 </div>
 
-                                <div class="categories__details">
-                                    <div class="categories__tags">
-                                        <div class="categories__tag">Shotter</div>
-                                    </div>
+                                <div class="categories__title">Fortnite</div>
 
-                                    <div class="categories__title">Fortnite</div>
+                                <div class="status green">4.9K Viewers</div>
 
-                                    <div class="status green">4.9K Viewers</div>
-
-                                    <button class="categories__btn button btn_gray">follow</button>
-                                </div>
-                            </div>
-
-                            <div class="categories__item categories__item_sm">
-                                <div class="categories__preview"
-                                    style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/categories-pic-1.png);">
-                                </div>
-
-                                <div class="categories__details">
-                                    <div class="categories__tags">
-                                        <div class="categories__tag">Shotter</div>
-                                    </div>
-
-                                    <div class="categories__title">Fortnite</div>
-
-                                    <div class="status green">4.9K Viewers</div>
-
-                                    <button class="categories__btn button btn_gray">follow</button>
-                                </div>
+                                <button class="categories__btn button btn_gray">follow</button>
                             </div>
                         </div>
+
+                        <div class="categories__item categories__item_sm categories__item_sm3">
+                            <div class="categories__preview"
+                                style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/categories-pic-1.png);">
+                            </div>
+
+                            <div class="categories__details">
+                                <div class="categories__tags">
+                                    <div class="categories__tag">Shotter</div>
+                                </div>
+
+                                <div class="categories__title">League of Legends®</div>
+
+                                <div class="status green">4.9K Viewers</div>
+
+                                <button class="categories__btn button btn_gray">follow</button>
+                            </div>
+                        </div>
+                        <!-- <div class="categories_right">
+                        </div> -->
 
                     </div>
                 </div>
 
-                <div class="collection">
+                <div class="collection" id="recomment_collection">
                     <div class="collection__head">
-                        <div class="collection__title">Live Channels</div>
+                        <div class="collection__title">Recomment Video</div>
                         <div class="collection__field filed">
                             <div class="field__wrap">
                                 <select name="" id="" class="field__select">
@@ -1208,7 +1299,6 @@
                                 <div class="status blue">4.2K watching</div>
                             </div>
                         </div>
-
                         <div class="card">
                             <div class="card__preview">
                                 <img class="card__pic" src="https://ui8-unity-gaming.herokuapp.com/img/card-pic-3.png"
@@ -1237,7 +1327,6 @@
                                 <div class="status blue">4.2K watching</div>
                             </div>
                         </div>
-
                         <div class="card">
                             <div class="card__preview">
                                 <img class="card__pic" src="https://ui8-unity-gaming.herokuapp.com/img/card-pic-3.png"
@@ -1266,198 +1355,64 @@
                                 <div class="status blue">4.2K watching</div>
                             </div>
                         </div>
+                    </div>
+                    <div class="collection__paging" id="recomment_collection__paging">
+                        <ul class="paging__list">
 
-                        <div class="card">
-                            <div class="card__preview">
-                                <img class="card__pic" src="https://ui8-unity-gaming.herokuapp.com/img/card-pic-3.png"
-                                    alt="">
-                            </div>
+                            <li class="paging__arrow paging__arrow_left" id="recomment_paging_al">
+                                <ion-icon class="paging__icon" name="chevron-back"></ion-icon>
+                            </li>
 
-                            <div class="card__body">
-                                <div class="card__title">2020 World Champs Gaming Warzone</div>
-                                <div class="card__user">
-                                    <div class="card__ava">
-                                        <img class="card__pic"
-                                            src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt="">
-                                    </div>
-                                    <div class="card__desc">
-                                        <div class="card__man confirm">tam tran</div>
-                                        <div class="card__game">Call of Duty®</div>
-                                    </div>
-                                </div>
-                            </div>
+                            <li class="paging__arrow paging__arrow_right" id="recomment_paging_ar">
+                                <ion-icon class="paging__icon" name="chevron-forward"></ion-icon>
+                            </li>
 
-                            <div class="card__foot">
-                                <div class="live">
-                                    <ion-icon name="wifi"></ion-icon>
-                                    Live
-                                </div>
-                                <div class="status blue">4.2K watching</div>
-                            </div>
-                        </div>
+                            <li class="paging__item paging__item1">
+                                <input type="radio" id="recomment_paging__btn" class="paging__btn recomment_paging__btn"
+                                    name="recomment_paging" value="1">
+                                <div class="paging__child">1</div>
+                            </li>
+                            <li class="paging__item paging__item2">
+                                <input type="radio" id="recomment_paging__btn" class="paging__btn recomment_paging__btn"
+                                    name="recomment_paging" value="2">
+                                <div class="paging__child">2</div>
+                            </li>
+                            <li class="paging__item paging__item3">
+                                <input type="radio" id="recomment_paging__btn" class="paging__btn recomment_paging__btn"
+                                    name="recomment_paging" value="3">
+                                <div class="paging__child">3</div>
+
+                            </li>
+                            <li class="paging__item paging__item4">
+                                <input type="radio" id="recomment_paging__btn" class="paging__btn recomment_paging__btn"
+                                    name="recomment_paging" value="4">
+                                <div class="paging__child">4</div>
+
+                            </li>
+                            <li class="paging__item paging__item5">
+                                <input type="radio" id="recomment_paging__btn" class="paging__btn recomment_paging__btn"
+                                    name="recomment_paging" value="5">
+                                <div class="paging__child">5</div>
+
+                            </li>
+                            <li class="paging__item paging__item6 recomment__paging_index">
+                                <div class="paging__dot">...</div>
+                                <input type="number" name="" class="paging__scroll">
+                            </li>
+
+                            <li class="paging__item paging__item7">
+                                <input type="radio" id="recomment_paging__btn" class="paging__btn recomment_paging__btn"
+                                    name="live_paging" value="20">
+                                <div class="paging__child">20</div>
+
+                            </li>
+
+                        </ul>
+
 
                     </div>
                 </div>
-                <div class="collection">
-                    <div class="collection__head">
-                        <div class="collection__title">Live Channels</div>
-                        <div class="collection__field filed">
-                            <div class="field__wrap">
-                                <select name="" id="" class="field__select">
-                                    <option value="">Popular</option>
-                                    <option value="">New</option>
-                                    <option value="">Free fai</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="collection__list">
-                        <div class="card">
-                            <div class="card__preview">
-                                <img class="card__pic" src="https://ui8-unity-gaming.herokuapp.com/img/card-pic-3.png"
-                                    alt="">
-                            </div>
 
-                            <div class="card__body">
-                                <div class="card__title">2020 World Champs Gaming Warzone</div>
-                                <div class="card__user">
-                                    <div class="card__ava">
-                                        <img class="card__pic"
-                                            src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt="">
-                                    </div>
-                                    <div class="card__desc">
-                                        <div class="card__man confirm">tam tran</div>
-                                        <div class="card__game">Call of Duty®</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card__foot">
-                                <div class="live">
-                                    <ion-icon name="wifi"></ion-icon>
-                                    Live
-                                </div>
-                                <div class="status blue">4.2K watching</div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card__preview">
-                                <img class="card__pic" src="https://ui8-unity-gaming.herokuapp.com/img/card-pic-3.png"
-                                    alt="">
-                            </div>
-
-                            <div class="card__body">
-                                <div class="card__title">2020 World Champs Gaming Warzone</div>
-                                <div class="card__user">
-                                    <div class="card__ava">
-                                        <img class="card__pic"
-                                            src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt="">
-                                    </div>
-                                    <div class="card__desc">
-                                        <div class="card__man confirm">tam tran</div>
-                                        <div class="card__game">Call of Duty®</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card__foot">
-                                <div class="live">
-                                    <ion-icon name="wifi"></ion-icon>
-                                    Live
-                                </div>
-                                <div class="status blue">4.2K watching</div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card__preview">
-                                <img class="card__pic" src="https://ui8-unity-gaming.herokuapp.com/img/card-pic-3.png"
-                                    alt="">
-                            </div>
-
-                            <div class="card__body">
-                                <div class="card__title">2020 World Champs Gaming Warzone</div>
-                                <div class="card__user">
-                                    <div class="card__ava">
-                                        <img class="card__pic"
-                                            src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt="">
-                                    </div>
-                                    <div class="card__desc">
-                                        <div class="card__man confirm">tam tran</div>
-                                        <div class="card__game">Call of Duty®</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card__foot">
-                                <div class="live">
-                                    <ion-icon name="wifi"></ion-icon>
-                                    Live
-                                </div>
-                                <div class="status blue">4.2K watching</div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card__preview">
-                                <img class="card__pic" src="https://ui8-unity-gaming.herokuapp.com/img/card-pic-3.png"
-                                    alt="">
-                            </div>
-
-                            <div class="card__body">
-                                <div class="card__title">2020 World Champs Gaming Warzone</div>
-                                <div class="card__user">
-                                    <div class="card__ava">
-                                        <img class="card__pic"
-                                            src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt="">
-                                    </div>
-                                    <div class="card__desc">
-                                        <div class="card__man confirm">tam tran</div>
-                                        <div class="card__game">Call of Duty®</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card__foot">
-                                <div class="live">
-                                    <ion-icon name="wifi"></ion-icon>
-                                    Live
-                                </div>
-                                <div class="status blue">4.2K watching</div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card__preview">
-                                <img class="card__pic" src="https://ui8-unity-gaming.herokuapp.com/img/card-pic-3.png"
-                                    alt="">
-                            </div>
-
-                            <div class="card__body">
-                                <div class="card__title">2020 World Champs Gaming Warzone</div>
-                                <div class="card__user">
-                                    <div class="card__ava">
-                                        <img class="card__pic"
-                                            src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt="">
-                                    </div>
-                                    <div class="card__desc">
-                                        <div class="card__man confirm">tam tran</div>
-                                        <div class="card__game">Call of Duty®</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card__foot">
-                                <div class="live">
-                                    <ion-icon name="wifi"></ion-icon>
-                                    Live
-                                </div>
-                                <div class="status blue">4.2K watching</div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
             </div>
         </div>
     </div>

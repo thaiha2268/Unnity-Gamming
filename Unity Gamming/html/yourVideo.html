@@ -19,11 +19,13 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
+
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/grid.css">
     <link rel="stylesheet" href="../css/unity.css">
     <link rel="stylesheet" href="../css/yourVideo.css">
-
+    <link rel="stylesheet" href="../css/unityResponsive.css">
+    <link rel="stylesheet" href="../css/yourVideoResponsive.css">
 
 </head>
 
@@ -38,7 +40,10 @@
                         src="https://ui8-unity-gaming.herokuapp.com/img/logo.svg" alt="">
                 </a>
                 <div class="sidebar__burger" id="sidebar__burger">
-                    <ion-icon size="large" name="reorder-three-outline"></ion-icon>
+                    <ion-icon class="sidebar__buger_dots" id="sidebar__buger_dots" size="large"
+                        name="reorder-three-outline"></ion-icon>
+                    <ion-icon class="sidebar__buger_close" id="sidebar__buger_close" size="large" name="close">
+                    </ion-icon>
                 </div>
             </div>
 
@@ -231,8 +236,11 @@
 
         <div class="page__wrapper" id="page__wrapper">
             <div class="header">
+                <div class="header__showSidebar">
+                    <ion-icon class="showSidebar_btn" id="showSidebar_btn" name="reorder-three-outline"></ion-icon>
+                </div>
                 <div class="header__item header__browse">
-                    <div class="header__head" id="container" onclick="showHeaderBody(0)">
+                    <div class="header__head" id="head_browse">
                         <div class="header__icon">
                             <ion-icon name="compass-outline"></ion-icon>
                         </div>
@@ -241,7 +249,7 @@
                             <ion-icon name="chevron-down-outline" class="chevron" id="chevron"></ion-icon>
                         </div>
                     </div>
-                    <div class="header__body">
+                    <div class="header__body" id="body_browse">
                         <a href="" class="header__line">
                             <div class="header__icon">
                                 <ion-icon name="rocket-outline"></ion-icon>
@@ -282,22 +290,27 @@
                 </div>
 
                 <div class="header__search">
-                    <div class="header__head" onclick="showHeaderBody(1)">
+                    <div class="header__search_show_btn">
                         <ion-icon name="search-outline"></ion-icon>
+                    </div>
+                    <div class="header__head header__head_search " id="head_search">
+                        <button type="submit" class="header__search_br">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </button>
                         <input class="header__input" type="search" name="" id="header__search_bar"
                             placeholder="Search Everything">
                     </div>
-                    <div class="header__body">
+                    <!-- <div class="header__body" id="body_search">
 
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="header__control">
                     <div class="header__item header__item_add">
-                        <div class="header__head" onclick="showHeaderBody(2)">
+                        <div class="header__head" id="head_item-add">
                             <ion-icon name="add-circle-outline"></ion-icon>
                         </div>
-                        <div class="header__body ">
+                        <div class="header__body " id="body_item-add">
                             <a href="" class="header__line">
                                 <div class="header__icon">
                                     <ion-icon name="videocam-outline"></ion-icon>
@@ -321,10 +334,10 @@
                     </div>
 
                     <div class="header__item header__item_notifications">
-                        <div class="header__head" onclick="showHeaderBody(3)">
+                        <div class="header__head" id="head_item-noti">
                             <ion-icon name="notifications-outline"></ion-icon>
                         </div>
-                        <div class="header__body ">
+                        <div class="header__body" id="body_item-noti">
                             <div class="notifications">
                                 <div class="notifications__caption">Recent Notification</div>
                                 <div class="notifications__list">
@@ -449,10 +462,10 @@
                 </div>
 
                 <div class="header__item header__user">
-                    <div class="header__head" onclick="showHeaderBody(4)">
+                    <div class="header__head" id="head_user">
                         <img src="https://ui8-unity-gaming.herokuapp.com/img/avatar.png" alt="">
                     </div>
-                    <div class="header__body ">
+                    <div class="header__body " id="body_user">
                         <a href="" class="header__link">
                             <div class="header__icon">
                                 <ion-icon name="person-outline"></ion-icon>
@@ -573,7 +586,7 @@
                                     <div class="field">
                                         <div class="field__wrap">
                                             <select name="" id="" class="field__select">
-                                                <option value="">Date uploaded</option>
+                                                <option selected disabled hidden>Date uploaded</option>
                                                 <option value="">New</option>
                                                 <option value="">Free</option>
                                             </select>
@@ -583,21 +596,31 @@
 
                                 <div class="catalog__box">
                                     <div class="catalog__actions">
-                                        <a href="" class="catalog__action">
+                                        <a href="" class="catalog__action catalog__action_btn">
                                             <ion-icon name="file-tray-full-outline"></ion-icon>
                                             Move
                                         </a>
 
-                                        <a href="" class="catalog__action">
+                                        <a href="" class="catalog__action catalog__action_btn">
                                             <ion-icon name="file-tray-full-outline"></ion-icon>
                                             Delete
                                         </a>
 
-                                        <a href="" class="catalog__action">
+                                        <a href="" class="catalog__action catalog__action_btn">
                                             <ion-icon name="file-tray-full-outline"></ion-icon>
                                             Add to playlist
                                         </a>
 
+                                        <div class="field catalog__action_cb">
+                                            <div class="field__wrap">
+                                                <select name="" id="" class="field__select">
+                                                    <option selected disabled hidden>Choose here</option>
+                                                    <option value="">Move</option>
+                                                    <option value="">Delete</option>
+                                                    <option value="">Add to Playlist</option>
+                                                </select>
+                                            </div>
+                                        </div>
 
                                     </div>
                                     <div class="catalog__views">

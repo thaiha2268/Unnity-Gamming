@@ -82,3 +82,14 @@ jsCatalogGridView.addEventListener("click", function (e) {
 });
 
 
+// 
+$(window).resize(function () {
+  if ($(window).width() < 1260) {
+    if ($(".catalog").hasClass("view")) {
+      $(".catalog").removeClass("view");
+      jsCatalogGridView.classList.add("active");
+    jsCatalogListView.classList.remove("active");
+    }
+  } 
+});
+
