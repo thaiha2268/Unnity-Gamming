@@ -55,8 +55,8 @@ $(document).ready(function () {
     false
   );
 
-  $('.popup_scrollTop').click(function(){
-    $('html,body').animate({scrollTop: 0});
+  $(".popup_scrollTop").click(function () {
+    $("html,body").animate({ scrollTop: 0 });
   });
 });
 
@@ -1009,15 +1009,310 @@ $(document).ready(function livePagingHandle() {
 // Show and Hide Stories
 $(document).ready(function () {
   let numberStory = $(".stories__item").length;
-  let listStory = $(".stories__item");
-  let widthStory = $(".stories__list").width() / 3;
-  let widthListStory = numberStory * widthStory;
-  let movement = 0;
+  // let listStory = $(".stories__item");
+  // let widthStory = $(".stories__list").width() / 3;
+  // let widthListStory = numberStory * widthStory;
+  // let movement = 0;
+
+  let cf = true;
+
+  let check;
+  let check2;
+  let check3;
+  let check4;
+
+  function createItem(number) {
+    let itemStr = '<div class="stories__item scale">';
+
+    // { Timeline
+    itemStr += '<div class="stories__timelines">';
+    let timelineTemp = "";
+    for (let i = 0; i < number; i++) {
+      timelineTemp +=
+        '<div class="stories__timeline"><div class="stories__timeline_fill"></div></div>';
+    }
+
+    itemStr += timelineTemp;
+    itemStr += "</div>";
+    // }
+
+    // { User
+    itemStr += '<div class="stories__user">';
+
+    let avaTemp =
+      '<div class="stories__ava"><img src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt=""></div>';
+    itemStr += avaTemp;
+
+    let desTemp =
+      '<div class="stories__des"><div class="stories__name">Zao Lil</div><div class="stories__cate">Call of Duty</div></div>';
+    itemStr += desTemp;
+
+    itemStr += "</div>";
+    // }
+
+    // { Action
+    itemStr += '<div class="stories__actions">';
+    let actionTemp =
+      '<div class="stories__react"><ion-icon name="magnet"></ion-icon></div>';
+    actionTemp += '<div class="stories__emoticons">';
+
+    let actionLike =
+      '<div class="stories__emoticon stories__like"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/e4299734559659.56d57de04bda4.gif" alt=""></div>';
+    let actionTym =
+      '<div class="stories__emoticon stories__tym"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/65ea2034559659.56d57de06cea2.gif" alt=""></div>';
+    let actionHaha =
+      '<div class="stories__emoticon stories__haha"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/35c9bf34559659.56d57de0eb467.gif" alt=""></div>';
+    let actionWow =
+      '<div class="stories__emoticon stories__wow"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/6105c734559659.56d59c54f0d05.gif" alt=""></div>';
+    let actionSad =
+      '<div class="stories__emoticon stories__sad"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/3eee1d34559659.56d59de621daa.gif" alt=""></div>';
+    let actionAngry =
+      '<div class="stories__emoticon stories__angry"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/e66e6e34559659.56d57de095aee.gif" alt=""></div>';
+
+    let inputTemp =
+      '<input class="stories__input" type="text" name="" placeholder="Send a message..."><div class="stories__btn_send button btn_purple">Send</div>';
+
+    actionTemp += actionLike;
+    actionTemp += actionTym;
+    actionTemp += actionHaha;
+    actionTemp += actionWow;
+    actionTemp += actionSad;
+    actionTemp += actionAngry;
+    actionTemp += "</div>";
+    actionTemp += inputTemp;
+    actionTemp += "</div>";
+
+    itemStr += actionTemp;
+    // }
+
+    // { Child
+    let childTemp = '<div class="stories__childs">';
+
+    for (let i = 0; i < number; i++) {
+      if (i == 0) {
+        childTemp +=
+          '<div class="stories__child active" style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/game-pic-';
+        childTemp += Math.floor(Math.random() * 3 + 1);
+        childTemp += '.png);"><img src="" alt=""></div>';
+      } else {
+        childTemp +=
+          '<div class="stories__child" style="background-image: url(https://ui8-unity-gaming.herokuapp.com/img/card-pic-';
+        childTemp += Math.floor(Math.random() * 3 + 1);
+        childTemp += '.png);"><img src="" alt=""></div>';
+      }
+    }
+
+    childTemp += "</div>";
+    itemStr += childTemp;
+    // }
+
+    itemStr += "\n</div>";
+
+    return itemStr;
+  }
+
+  // let item = createItem(3);
+  // console.log(item);
+
+  let arrStory = [];
+  let indexActive = 3;
+
+  for (let i = 0; i < 7; i++) {
+    let newItem = createItem(Math.floor(Math.random() * 10 + 1));
+    $(".stories__list").append(newItem);
+    $(".stories__item").eq(i).removeClass("scale");
+    $(".stories__item").eq(indexActive).addClass("active");
+  }
+
+  function nextStory() {
+    let numberItemChild = Math.floor(Math.random() * 10 + 1);
+
+    let promise = new Promise((resolve, reject) => {
+      resolve();
+    });
+
+    promise
+      .then(() => {
+        let newItem = createItem(numberItemChild);
+        $(".stories__list").append(newItem);
+      })
+
+      .then(() => {
+        let listStory = $(".stories__item");
+
+        listStory.removeClass("active center");
+        listStory.eq(indexActive).addClass("active center");
+
+        listStory.eq(0).addClass("scale");
+      });
+
+    // .then(() => {
+    //   cf = true;
+    // })
+
+    // .then(() => {
+    //   activeTimeLine(0);
+    // });
+
+    $(".stories__item:last-child").removeClass("scale");
+
+    $(".stories__item").eq(0).remove();
+  }
+
+  function activeTimeLine(startIndex) {
+    let timelineFill = $(".stories__item.active .stories__timeline_fill");
+    let storyChild = $(".stories__item.active .stories__child");
+    let numberTimelineFill = timelineFill.length;
+    let numStoryChild = storyChild.length;
+    let n = 0;
+
+    if (numberTimelineFill == numStoryChild) {
+      for (let i = startIndex; i <= numberTimelineFill; i++) {
+        check3 = setTimeout(() => {
+          if (cf == false) {
+            clearTimeout(check3);
+          } else {
+            timelineFill.eq(i).addClass("active");
+
+            if (i != startIndex) {
+              storyChild.eq(i).addClass("active");
+            }
+
+            check4 = setTimeout(() => {
+              if (cf == false) {
+                clearTimeout(check4);
+              } else {
+                timelineFill.eq(i).removeClass("active");
+                if (i != numberTimelineFill - 1) {
+                  storyChild.eq(i).removeClass("active");
+                }
+              }
+              // if (i == numberTimelineFill) {
+              //   nextStory();
+              // }
+            }, 4980);
+          }
+        }, 5000 * i);
+      }
+
+      n = 5000 * numberTimelineFill;
+    }
+
+    return n;
+  }
+
+  function showStories(){
+    clearTimeout(check);
+    clearTimeout(check2);
+
+    // cf = false;
+
+    let promise = Promise.resolve()
+
+      .then(() => {
+        return new Promise((resolve, reject) => {
+          let numberChildItem = $(
+            ".stories__item.active .stories__child"
+          ).length;
+          let indexItemChildActive =
+            $(".stories__item.active .stories__child").index(
+              $(".stories__item.active .stories__child.active")
+            ) + 1;
+
+          if (indexItemChildActive == numberChildItem) {
+            resolve("nextStory"); // last index
+          } else {
+            resolve(indexItemChildActive);
+          }
+        });
+      })
+
+      .then((value) => {
+        return new Promise((resolve, reject) => {
+          clearTimeout(check3);
+          clearTimeout(check4);
+          nextStory();
+          resolve();
+          // if (value == "nextStory") {
+          // } else {
+          //   clearTimeout(check3);
+          //   clearTimeout(check4);
+          //   console.log("promist : " + value);
+            // cf = true;
+            // activeTimeLine(value);
+          // }
+        });
+      })
+
+      .then(() => {
+        $(
+          ".stories__item:nth-child(" + indexActive + ") .stories__child"
+        ).addClass("active hidden");
+        $(
+          ".stories__item:nth-child(" +
+            indexActive +
+            ") .stories__child:last-child"
+        ).removeClass("hidden");
+
+        cf = true;
+        run();
+      })
+      .catch(() => {});
+  }
+
+  function run() {
+    if (cf == true) {
+      let delayTime = activeTimeLine(0);
+
+      check = setTimeout(nextStory, delayTime);
+
+      delay = delayTime;
+
+      check2 = setTimeout(run, delayTime + 100);
+    }
+  }
+
+  run();
+
+  $(".stories__btn_next").click(function () {
+    showStories();
+  });
+
+  $(".stories__btn_prev").click(function () {
+    clearTimeout(check);
+    clearTimeout(check2);
+
+    cf = false;
+
+    let promise = Promise.resolve()
+
+      .then(() => {
+        return new Promise((resolve, reject) => {
+          nextStory();
+          clearTimeout(check3);
+          clearTimeout(check4);
+          resolve();
+        });
+      })
+      .then(() => {
+        $(
+          ".stories__item:nth-child(" + indexActive + ") .stories__child"
+        ).addClass("active hidden");
+        $(
+          ".stories__item:nth-child(" +
+            indexActive +
+            ") .stories__child:last-child"
+        ).removeClass("hidden");
+
+        cf = true;
+        run();
+      });
+  });
 
   $(".header__stories").click(function () {
     $(".stories").addClass("active");
+      showStories();
   });
-
   $(".stories__bg, .stories__btn_close").click(function () {
     $(".stories").removeClass("active");
     // $(".stories__list").css({ marginLeft: "0px" });
@@ -1025,36 +1320,36 @@ $(document).ready(function () {
     // listStory.eq(1).addClass("active center");
   });
 
-  $(".stories__btn_next").click(function () {
-    let activeStory = $(".stories__item.active");
+  // $(".stories__btn_next").click(function () {
+  //   let activeStory = $(".stories__item.active");
 
-    if (
-      numberStory > 3 &&
-      movement <= widthListStory - $(".stories__list").width()
-    ) {
-      let indexStoryActive = listStory.index(activeStory);
+  //   if (
+  //     numberStory > 3 &&
+  //     movement <= widthListStory - $(".stories__list").width()
+  //   ) {
+  //     let indexStoryActive = listStory.index(activeStory);
 
-      activeStory.removeClass("active center");
-      listStory.eq(indexStoryActive + 1).addClass("active center");
+  //     activeStory.removeClass("active center");
+  //     listStory.eq(indexStoryActive + 1).addClass("active center");
 
-      movement += widthStory;
+  //     movement += widthStory;
 
-      $(".stories__list").css({ marginLeft: -movement + "px" });
-    }
-  });
+  //     $(".stories__list").css({ marginLeft: -movement + "px" });
+  //   }
+  // });
 
-  $(".stories__btn_prev").click(function () {
-    let activeStory = $(".stories__item.active");
+  // $(".stories__btn_prev").click(function () {
+  //   let activeStory = $(".stories__item.active");
 
-    if (numberStory > 3 && movement >= 0) {
-      let indexStoryActive = listStory.index(activeStory);
+  //   if (numberStory > 3 && movement >= 0) {
+  //     let indexStoryActive = listStory.index(activeStory);
 
-      activeStory.removeClass("active center");
-      listStory.eq(indexStoryActive - 1).addClass("active center");
+  //     activeStory.removeClass("active center");
+  //     listStory.eq(indexStoryActive - 1).addClass("active center");
 
-      movement -= widthStory;
+  //     movement -= widthStory;
 
-      $(".stories__list").css({ marginLeft: -movement + "px" });
-    }
-  });
+  //     $(".stories__list").css({ marginLeft: -movement + "px" });
+  //   }
+  // });
 });

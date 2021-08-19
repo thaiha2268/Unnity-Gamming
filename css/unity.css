@@ -17,15 +17,17 @@ body::-webkit-scrollbar-thumb:hover {
     background: #555;
     border-radius: 10px;
 }
-* Scroll */
+
+/* Scroll */
 
 .page.scroll .header {
     height: 5.6rem;
 }
 
-body{
+body {
     overflow-x: hidden;
 }
+
 .page.scroll .page__wrapper {
     padding-top: 5.6rem;
 }
@@ -2024,12 +2026,16 @@ input[type=number] {
 }
 
 .stories__container {
+    --width-container: 1000px;
     position: absolute;
-    width: 70%;
+    width: var(--width-container);
     height: 90%;
     /* max-width: 1300px; */
-    /* border: 1px solid rgb(0, 255, 102); */
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s ease;
 }
 
 .stories__btns {}
@@ -2074,9 +2080,9 @@ input[type=number] {
     --spacing: 20px;
     display: flex;
     flex-wrap: nowrap;
-    width: 100%;
+    width: max-content;
     height: 100%;
-    overflow: auto;
+    overflow: visible;
     scroll-snap-type: x mandatory;
     scroll-snap-stop: always;
     overflow: visible;
@@ -2084,19 +2090,20 @@ input[type=number] {
 }
 
 .stories__item {
-    --width-item: calc(100% / var(--col) - 20px);
     position: relative;
     height: 100%;
-    width: var(--width-item);
-    min-width: var(--width-item);
+    width: calc( var(--width-container) / 3 - 20px);
     margin: 0 10px;
     padding: calc(32px + 56px) 32px;
     display: flex;
     flex-direction: column;
-    flex: 1;
-    transition: all 0.6s ease;
+    /* flex: 1; */
+    transform: scale(1);
+    transform-origin: left;
+    transition: all 1s ease;
     scroll-snap-align: center;
     /* transform: translate(-681px); */
+    /* animation:  main 3s; */
 }
 
 @keyframes storyMovement {
@@ -2112,7 +2119,21 @@ input[type=number] {
 
 .stories__item.active {
     padding: 32px;
-    animation: storyMovement 0.6s ease;
+}
+
+.stories__item.active .stories__actions {
+    display: flex;
+}
+
+.stories__item.active .stories__timelines {
+    display: flex;
+}
+
+.stories__item.scale {
+    transform: scaleX(0);
+    width: 0;
+    padding: calc(32px + 56px) 0;
+    margin: 0;
 }
 
 .stories__item.center .stories__child.active {
@@ -2158,6 +2179,19 @@ input[type=number] {
     border-radius: 16px;
     background: rgba(228, 228, 228, 0.428);
     transition: all 0.6s ease;
+    animation: actionDisplay 0.8s;
+    display: none;
+}
+
+@keyframes actionDisplay {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
 
 .stories__item.active .stories__actions {
@@ -2264,6 +2298,8 @@ input[type=number] {
     z-index: 2;
     display: flex;
     margin: 0 -2px 24px;
+    display: none;
+    animation: showTimeline 0.8s;
 }
 
 .stories__timeline {
@@ -2273,6 +2309,26 @@ input[type=number] {
     margin: 0 2px;
     background: rgba(255, 255, 255, 0.4);
     transition: background .25s;
+}
+
+@keyframes showTimeline {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.stories__timeline_fill {
+    height: 100%;
+    width: 0%;
+    transition: width 5s ease-out;
+}
+
+.stories__timeline_fill.active {
+    background-color: #ffd900;
+    width: 100%;
 }
 
 .stories__timeline.active {
@@ -2286,28 +2342,48 @@ input[type=number] {
     bottom: calc(32px + 56px);
     left: 0;
     right: 0;
+    display: flex;
     border-radius: 24px;
     transition: all 0.6s ease;
+}
+
+@keyframes showStoryChilds {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
 }
 
 .stories__item.active .stories__childs {
     top: 0;
     bottom: 32px;
-    transition: all 0.6s ease;
+    overflow: hidden;
 }
 
 .stories__child {
-    width: 100%;
+    width: 0;
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 100% 0%;
     border-radius: 24px;
-    display: none;
+    transition: all 0.6s ease;
+    transform-origin: right;
+    transform: scaleX(0);
 }
 
 .stories__child.active {
-    display: block;
+    width: 100%;
+    transform: scaleX(1);
+}
+
+.stories__child.hidden {
+    width: 0%;
+    transform: scaleX(0);
 }
 
 .stories__emoticon.stories__like {}
