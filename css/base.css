@@ -34,6 +34,7 @@ ion-icon {
 
 a {
   text-decoration: none;
+
 }
 
 button {
@@ -66,6 +67,7 @@ div, input, textarea, select, button, h1, h2, h3, h4, h5, h6, a, span, a:focus {
 }
 
 /* Button */
+
 
 .button {
   min-width: 166px;
@@ -106,7 +108,7 @@ div, input, textarea, select, button, h1, h2, h3, h4, h5, h6, a, span, a:focus {
   color: #ffffff;
 }
 
-.page.toggle .btn_gray , .page.toggle .btn_purple{
+.page.toggle .btn_gray, .page.toggle .btn_purple {
   background: #3F8CFF;
   color: #ffffff;
 }
@@ -145,6 +147,10 @@ div, input, textarea, select, button, h1, h2, h3, h4, h5, h6, a, span, a:focus {
 .grid__row {
   display: flex;
   flex-wrap: wrap;
+}
+
+.popup__message.active {
+  min-width: 260px;
 }
 
 /* .row {
