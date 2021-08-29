@@ -54,14 +54,14 @@
                     <div class="sidebar__group">
                         <div class="sidebar__caption"><span>new&nbsp;</span> feeds</div>
                         <div class="sidebar__menu">
-                            <a href="index.html" class="sidebar__item active">
+                            <a href="../index.html" class="sidebar__item ">
                                 <div class="sidebar__icon">
                                     <ion-icon name="game-controller-outline"></ion-icon>
                                 </div>
 
                                 <div class="sidebar__text">news feed</div>
                             </a>
-                            <a href="html/trending.html" class="sidebar__item">
+                            <a href="/html/trending.html" class="sidebar__item">
                                 <div class="sidebar__icon">
                                     <ion-icon name="person-outline"></ion-icon>
                                 </div>
@@ -75,7 +75,7 @@
 
                                 <div class="sidebar__text">following</div>
                             </a>
-                            <a href="/html/yourVideo.html" class="sidebar__item">
+                            <a href="/html/yourVideo.html" class="sidebar__item active">
                                 <div class="sidebar__icon">
                                     <ion-icon name="videocam-outline"></ion-icon>
                                 </div>
@@ -97,7 +97,10 @@
                     </div>
 
                     <div class="sidebar__group">
-                        <div class="sidebar__caption">following</div>
+                        <div class="sidebar__caption following">
+                            <div class="sidebar__caption_following">following</div>
+                            <div class="sidebar__counter">0</div>
+                        </div>
                         <div class="sidebar__list">
 
                         </div>
@@ -596,20 +599,20 @@
 
                                 <div class="catalog__box">
                                     <div class="catalog__actions">
-                                        <a href="" class="catalog__action catalog__action_btn">
+                                        <div class="catalog__action catalog__action_btn move">
                                             <ion-icon name="file-tray-full-outline"></ion-icon>
                                             Move
-                                        </a>
+                                        </div>
 
-                                        <a href="" class="catalog__action catalog__action_btn">
+                                        <div class="catalog__action catalog__action_btn delete">
                                             <ion-icon name="file-tray-full-outline"></ion-icon>
                                             Delete
-                                        </a>
+                                        </div>
 
-                                        <a href="" class="catalog__action catalog__action_btn">
+                                        <div class="catalog__action catalog__action_btn add">
                                             <ion-icon name="file-tray-full-outline"></ion-icon>
                                             Add to playlist
-                                        </a>
+                                        </div>
 
                                         <div class="field catalog__action_cb">
                                             <div class="field__wrap">

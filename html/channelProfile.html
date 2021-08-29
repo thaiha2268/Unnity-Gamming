@@ -59,14 +59,14 @@
                     <div class="sidebar__group">
                         <div class="sidebar__caption"><span>new&nbsp;</span> feeds</div>
                         <div class="sidebar__menu">
-                            <a href="index.html" class="sidebar__item active">
+                            <a href="../index.html" class="sidebar__item ">
                                 <div class="sidebar__icon">
                                     <ion-icon name="game-controller-outline"></ion-icon>
                                 </div>
 
                                 <div class="sidebar__text">news feed</div>
                             </a>
-                            <a href="html/trending.html" class="sidebar__item">
+                            <a href="/html/trending.html" class="sidebar__item">
                                 <div class="sidebar__icon">
                                     <ion-icon name="person-outline"></ion-icon>
                                 </div>
@@ -102,7 +102,10 @@
                     </div>
 
                     <div class="sidebar__group">
-                        <div class="sidebar__caption">following</div>
+                        <div class="sidebar__caption following">
+                            <div class="sidebar__caption_following">following</div>
+                            <div class="sidebar__counter">0</div>
+                        </div>
                         <div class="sidebar__list">
 
                         </div>
@@ -517,31 +520,7 @@
 
             <div class="page__center">
                 <div class="author">
-                    <div class="author__detail">
 
-                        <div class="author__ava">
-                            <img src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt="" class="ava__img">
-                        </div>
-
-                        <div class="author__info">
-                            <div class="author__name"></div>
-                            <div class="author__parameters">
-                                <div class="author__parameter author__followers">0 followers</div>
-                                <div class="author__parameter author__videos">0 videos</div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="author__actions">
-
-                        <div class="author__action button btn_purple">Message</div>
-
-                        <div class="author__action button btn_square" id="btn__follow">
-                            <div class="action__follow unfollowed active"><i class="fas fa-user-plus"></i></div>
-                            <div class="action__follow followed"><i class="fas fa-user-check"></i></div>
-                        </div>
-
-                    </div>
                 </div>
                 <div class="catalog catalog__channel">
                     <div class="catalog__nav">
@@ -550,15 +529,26 @@
                         <div class="catalog__link">Playlists</div>
                         <div class="catalog__link">About</div>
                     </div>
-                    <div class="catalog__item catalog__item_video">
-                        <div class="catalog__filter">
-                            <div class="catalog__tags">
-                                <div class="catalog__tag active">All</div>
-                                <div class="catalog__tag">Stream Videos</div>
-                                <div class="catalog__tag">Videos</div>
-                            </div>
-                            <div class="catalog__field">
-                                <div class="field__wrap">
+
+                    <div class="catalog__tab">
+                        <div class="catalog__item catalog__item_video">
+
+                            <div class="catalog__filter">
+                                <div class="catalog__tags">
+                                    <div class="catalog__tag active">All</div>
+                                    <div class="catalog__tag">Stream Videos</div>
+                                    <div class="catalog__tag">Videos</div>
+
+                                </div>
+
+                                <div class="catalog__field catalog__tags_select">
+                                    <select name="" id="" class="field__select">
+                                        <option value="">All</option>
+                                        <option value="">Stream Videos</option>
+                                        <option value="">Videos</option>
+                                    </select>
+                                </div>
+                                <div class="catalog__field  catalog__tags_sort">
                                     <select name="" id="" class="field__select">
                                         <option value="">Popular</option>
                                         <option value="">Date</option>
@@ -567,16 +557,123 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="catalog__list"></div>
 
-                        <div class="catalog__btns">
-                            <button class="catalog__btn catalog__btn_load button btn__gray">Load More</button>
+                            <div class="catalog__list"></div>
+
+                            <div class="catalog__btns">
+                                <button class="catalog__btn catalog__btn_load button btn__gray">Load More</button>
+                            </div>
+                        </div>
+
+                        <div class="catalog__item catalog__item_followings">
+
+                            <div class="following__item following__item_fl">
+                                <div class="followings__top">
+                                    <div class="followings__title">Followings</div>
+                                    <!-- <div class="followings__btns">
+                                        <ion-icon name="close-outline"></ion-icon>
+                                    </div> -->
+                                </div>
+                                <div class="followings__bottom">
+                                    <div class="following__ar following__ar_left">
+                                        <ion-icon name="chevron-back-outline"></ion-icon>
+                                    </div>
+                                    <div class="following__ar following__ar_right">
+                                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="following__item following__item_rc">
+                                <div class="followings__top">
+                                    <div class="followings__title">Recomment Channel</div>
+                                    <div class="followings__btns">
+                                        <ion-icon name="close-outline"></ion-icon>
+                                    </div>
+                                </div>
+                                <div class="followings__bottom">
+                                    <div class="following__ar following__ar_left">
+                                        <ion-icon name="chevron-back-outline"></ion-icon>
+                                    </div>
+                                    <div class="following__ar following__ar_right">
+                                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                                    </div>
+
+                                    <div class="following">
+                                        <div class="following__ava"><img
+                                                src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt=""
+                                                class="following__img"></div>
+                                        <div class="following__name">Eula Hermann</div>
+                                        <div class="following__views">5.1M views</div>
+                                        <div class="following__btn">follow</div>
+                                    </div>
+                                    <div class="following">
+                                        <div class="following__ava"><img
+                                                src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt=""
+                                                class="following__img"></div>
+                                        <div class="following__name">Ginger Bergnaum</div>
+                                        <div class="following__views">5.1M views</div>
+                                        <div class="following__btn">follow</div>
+                                    </div>
+                                    <div class="following">
+                                        <div class="following__ava"><img
+                                                src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt=""
+                                                class="following__img"></div>
+                                        <div class="following__name">Eugene Gleason</div>
+                                        <div class="following__views">5.1M views</div>
+                                        <div class="following__btn">follow</div>
+                                    </div>
+                                    <div class="following">
+                                        <div class="following__ava"><img
+                                                src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt=""
+                                                class="following__img"></div>
+                                        <div class="following__name">Candice Langosh</div>
+                                        <div class="following__views">5.1M views</div>
+                                        <div class="following__btn">follow</div>
+                                    </div>
+                                    <div class="following">
+                                        <div class="following__ava"><img
+                                                src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt=""
+                                                class="following__img"></div>
+                                        <div class="following__name">Marty Goldner</div>
+                                        <div class="following__views">5.1M views</div>
+                                        <div class="following__btn">follow</div>
+                                    </div>
+                                    <div class="following">
+                                        <div class="following__ava"><img
+                                                src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png" alt=""
+                                                class="following__img"></div>
+                                        <div class="following__name">Nicole Mertz</div>
+                                        <div class="following__views">5.1M views</div>
+                                        <div class="following__btn">follow</div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                        </div>
+
+                        <div class="catalog__item catalog__item_playlits">
+
+                            <div class="playlists__top">
+                                <div class="playlists__title">Created playlist</div>
+                                <div class="playlists__field">
+                                    <div class="field__title">
+                                        <ion-icon name="filter-outline"></ion-icon>
+                                        sort by
+                                    </div>
+                                    <div class="field__select"></div>
+                                </div>
+                            </div>
+
+                            <div class="playlists__bottom">
+
+                            </div>
+                        </div>
+
+                        <div class="catalog__item catalog__item_about">
+
                         </div>
                     </div>
-                    <div class="catalog__item"></div>
-                    <div class="catalog__item"></div>
-                    <div class="catalog__item"></div>
                 </div>
 
             </div>

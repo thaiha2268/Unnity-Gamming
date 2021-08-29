@@ -35,7 +35,7 @@
     <div class="page ">
         <div class="sidebar" id="sidebar">
             <div class="sidebar__top">
-                <a href="/index.html" class="sidebar__logo">
+                <a href="index.html" class="sidebar__logo">
                     <img class="sidebar__logo_img sidebar__logo_white"
                         src="https://ui8-unity-gaming.herokuapp.com/img/logo-white.svg" alt="">
                     <img class="sidebar__logo_img sidebar__logo_black"
@@ -54,7 +54,7 @@
                     <div class="sidebar__group">
                         <div class="sidebar__caption"><span>new&nbsp;</span> feeds</div>
                         <div class="sidebar__menu">
-                            <a href="/index.html" class="sidebar__item ">
+                            <a href="../index.html" class="sidebar__item ">
                                 <div class="sidebar__icon">
                                     <ion-icon name="game-controller-outline"></ion-icon>
                                 </div>
@@ -75,7 +75,7 @@
 
                                 <div class="sidebar__text">following</div>
                             </a>
-                            <a href="/html/yourVideo.html" class="sidebar__item">
+                            <a href="/html/yourVideo.html" class="sidebar__item ">
                                 <div class="sidebar__icon">
                                     <ion-icon name="videocam-outline"></ion-icon>
                                 </div>
@@ -97,58 +97,11 @@
                     </div>
 
                     <div class="sidebar__group">
-                        <div class="sidebar__caption">following</div>
+                        <div class="sidebar__caption following">
+                            <div class="sidebar__caption_following">following</div>
+                            <div class="sidebar__counter">0</div>
+                        </div>
                         <div class="sidebar__list">
-                            <a href="" class="sidebar__item online">
-                                <div class="sidebar__ava">
-                                    <img class="ava-image" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
-                                        alt="" class="sidebar__pic">
-                                </div>
-
-                                <div class="sidebar__name">dylan hodges</div>
-
-
-                            </a>
-                            <a href="" class="sidebar__item online">
-                                <div class="sidebar__ava">
-                                    <img class="ava-image" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
-                                        alt="" class="sidebar__pic">
-                                </div>
-
-                                <div class="sidebar__name">dylan hodges</div>
-
-
-                            </a>
-                            <a href="" class="sidebar__item online">
-                                <div class="sidebar__ava">
-                                    <img class="ava-image" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
-                                        alt="" class="sidebar__pic">
-                                </div>
-
-                                <div class="sidebar__name">dylan hodges</div>
-
-
-                            </a>
-                            <a href="" class="sidebar__item ">
-                                <div class="sidebar__ava">
-                                    <img class="ava-image" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
-                                        alt="" class="sidebar__pic">
-                                </div>
-
-                                <div class="sidebar__name">dylan hodges</div>
-
-
-                            </a>
-                            <a href="" class="sidebar__item ">
-                                <div class="sidebar__ava">
-                                    <img class="ava-image" src="https://ui8-unity-gaming.herokuapp.com/img/ava-1.png"
-                                        alt="" class="sidebar__pic">
-                                </div>
-
-                                <div class="sidebar__name">dylan hodges</div>
-
-
-                            </a>
 
                         </div>
                         <div class="sidebar__more">
@@ -236,6 +189,54 @@
             </div>
         </div>
 
+        <div class="stories">
+            <div class="stories__bg"></div>
+            <div class="stories__btns">
+                <div class="stories__btn_close">
+                    <ion-icon name="close"></ion-icon>
+                </div>
+                <div class="stories__btn stories__btn_next">
+                    <ion-icon name="arrow-forward"></ion-icon>
+                </div>
+                <div class="stories__btn stories__btn_prev">
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="stories__container">
+
+                <div class="stories__list">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="popup_scrollTop">
+            <ion-icon class="popup_icon" name="arrow-up-circle-outline"></ion-icon>
+        </div>
+
+        <div class="popup__message">
+            <div class="pm__list">
+            </div>
+
+            <div class="pm_note">
+                <div>You don't have any new notifications</div>
+                <ion-icon name="happy-outline"></ion-icon>
+            </div>
+
+            <div class="pm__arrows">
+                <div class="pm__arrow pm__arrow_noti">
+                    <ion-icon name="notifications-outline"></ion-icon>
+                </div>
+                <div class="pm__arrow pm__arrow_do pm__arrow_undo active">
+                    <ion-icon name="arrow-undo-outline"></ion-icon>
+                </div>
+                <div class="pm__arrow pm__arrow_do pm__arrow_redo ">
+                    <ion-icon name="arrow-redo-outline"></ion-icon>
+                </div>
+
+            </div>
+        </div>
+
         <div class="page__wrapper" id="page__wrapper">
             <div class="header">
                 <div class="header__showSidebar">
@@ -252,41 +253,41 @@
                         </div>
                     </div>
                     <div class="header__body" id="body_browse">
-                        <a href="" class="header__line">
+                        <div class="header__line">
                             <div class="header__icon">
                                 <ion-icon name="rocket-outline"></ion-icon>
                             </div>
 
                             <div class="header__text">Hot Streammers </div>
-                        </a>
-                        <a href="" class="header__line">
+                        </div>
+                        <div class="header__line">
                             <div class="header__icon">
                                 <ion-icon name="rocket-outline"></ion-icon>
                             </div>
 
                             <div class="header__text">trending video </div>
-                        </a>
-                        <a href="" class="header__line">
+                        </div>
+                        <div class="header__line">
                             <div class="header__icon">
                                 <ion-icon name="rocket-outline"></ion-icon>
                             </div>
 
                             <div class="header__text"> Following</div>
-                        </a>
-                        <a href="" class="header__line">
+                        </div>
+                        <div class="header__line">
                             <div class="header__icon">
                                 <ion-icon name="rocket-outline"></ion-icon>
                             </div>
 
                             <div class="header__text"> live channels</div>
-                        </a>
-                        <a href="" class="header__line">
+                        </div>
+                        <div class="header__line header__stories">
                             <div class="header__icon">
                                 <ion-icon name="rocket-outline"></ion-icon>
                             </div>
 
                             <div class="header__text"> stories</div>
-                        </a>
+                        </div>
 
                     </div>
                 </div>
@@ -300,7 +301,7 @@
                             <ion-icon name="search-outline"></ion-icon>
                         </button>
                         <input class="header__input" type="search" name="" id="header__search_bar"
-                            placeholder="Search Everything">
+                            placeholder="Search Everything...">
                     </div>
                     <!-- <div class="header__body" id="body_search">
 

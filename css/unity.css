@@ -1799,17 +1799,17 @@ option {
     color: #fff;
 }
 
-.live__paging_index.active, .recomment__paging_index.active {
+.live__paging_index.active, .recomment__paging_index.active, .video__paging_index.active {
     display: block;
     width: 50px;
     position: relative;
 }
 
-.live__paging_index.active .paging__scroll, .recomment__paging_index.active .paging__scroll {
+.live__paging_index.active .paging__scroll, .recomment__paging_index.active .paging__scroll, .video__paging_index.active .paging__scroll {
     display: block;
 }
 
-.live__paging_index.active .paging__dot, .recomment__paging_index.active .paging__dot {
+.live__paging_index.active .paging__dot, .recomment__paging_index.active .paging__dot, .video__paging_index.active .paging__dot {
     display: none;
 }
 

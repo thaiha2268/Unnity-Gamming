@@ -1,3 +1,4 @@
+"use strict";
 // Show and Hide Header
 $(document).ready(function () {
   $("#head_browse").click(function () {
@@ -1487,6 +1488,17 @@ $(document).ready(() => {
   if ($(".pm__list .pm__item").length == 0) {
     $(".pm_note").show();
   }
+
+  $(window).click((e) => {
+    if (!e.target.closest(".popup__message, .pm__btn, .header__head")) {
+      $(".popup__message").removeClass("active");
+
+      $(".pm__arrow_undo").addClass("active");
+      $(".pm__arrow_redo").removeClass("active");
+
+      $(".header__body").hide();
+    }
+  });
 
   $(".pm__arrows").click(() => {
     $(".popup__message").toggleClass("active");
