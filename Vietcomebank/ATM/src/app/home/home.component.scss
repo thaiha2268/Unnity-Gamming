@@ -1,0 +1,8 @@
+@import "../../styles.scss";
+
+.home__container {
+  @include backgroundStyle();
+  padding-top: 13rem;
+
+  @include baseStyle();
+}

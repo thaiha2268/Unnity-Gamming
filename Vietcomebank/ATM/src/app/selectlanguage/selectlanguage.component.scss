@@ -1,0 +1,28 @@
+@import "../../styles.scss";
+
+.language__container {
+  @include backgroundStyle();
+  padding-top: 13rem;
+
+  @include baseStyle();
+
+  .home__btns {
+    .home__actions_left {
+      width: 50%;
+      .home__action {
+        & {
+          background: transparent;
+          color: #000;
+          cursor: default;
+        }
+        &::before {
+          box-shadow: -10px 10px 0px 0px transparent;
+        }
+        &::after {
+          box-shadow: -10px -10px 0px 0px transparent;
+        }
+      }
+    }
+
+  }
+}

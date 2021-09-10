@@ -1,0 +1,10 @@
+@import "../../../styles.scss";
+
+.cashout-confirm__container {
+  @include backgroundStyle();
+  padding-top: 13rem;
+
+  @include baseStyle();
+
+  
+}

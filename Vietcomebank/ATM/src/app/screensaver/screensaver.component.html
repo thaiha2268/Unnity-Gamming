@@ -1,0 +1,27 @@
+<div class="screenSavers__container" style="background-image: url(../assets/image/bg2.jpg);">
+  <div class="screenSavers_card">
+    <div class="screenSavers__select">
+
+      <div class="list_card" #listCards>
+        <div class="card"  *ngFor="let user of users" data-id="{{ user.id }}">
+          <div class="card__img"><img src="/assets/image/cardEmpty.png" alt="" class="img"></div>
+          <div class="card__details">
+            <div class="card__detail card__num">{{ user.number }}</div>
+            <div class="card__detail card__name">{{ user.name }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arrow_btns">
+        <div class="arrow_btn btn__left" (click)="scrollLeft()"><i class="fas fa-arrow-left"></i></div>
+        <div class="arrow_btn btn__right" (click)="scrollRight()"><i class="fas fa-arrow-right"></i></div>
+      </div>
+
+    </div>
+
+
+    <div class="putCard_btn button btn_wide" (click)="navigateToSelectLanguage()">
+      Đút Thẻ
+    </div>
+  </div>
+</div>

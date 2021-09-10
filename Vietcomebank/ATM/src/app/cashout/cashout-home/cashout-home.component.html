@@ -1,0 +1,24 @@
+<div class="cashout-home__container" style="background-image: url(../assets/image/bg2.jpg);">
+  <div class="home__guide">
+    <div class="home__caption">Xin vui lòng lựa chọn dịch vụ bên em</div>
+    <div class="home__notice">(Bên em sẽ thu phí cho khách làng khác sang làng này chơi)</div>
+    <div class="home__details">
+      <div class="home__detail">Số dư tk : {{balance | number}} đ</div>
+    </div>
+  </div>
+
+  <div class="home__btns">
+    <div class="home__actions home__actions_left">
+      <div class="home__action">100 000</div>
+      <div class="home__action">500 000</div>
+      <div class="home__action">1000 000</div>
+      <div class="home__action">1 500 000</div>
+    </div>
+    <div class="home__actions home__actions_right">
+      <div class="home__action">3 000 000</div>
+      <div class="home__action">5 000 000</div>
+      <div class="home__action" (click)="navigateToCashoutInput()">{{a.actions7}}</div>
+      <div class="home__action" (click)="removeCard()">{{a.actions8}}</div>
+    </div>
+  </div>
+</div>

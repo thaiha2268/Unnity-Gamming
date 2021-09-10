@@ -1,0 +1,26 @@
+<div class="cashout-confirm__container" style="background-image: url(../assets/image/bg2.jpg);">
+  <div class="home__guide">
+    <div class="home__details">
+      <div class="home__detail">Số dư tk : {{balance | number }} đ</div>
+      <div class="home__detail">Rút : {{cashoutMoney | number }} đ</div>
+      <div class="home__detail">Phí : {{cost | number }} đ</div>
+      <div class="home__detail">Số dư còn lại : {{theRemainingBalance | number }} đ</div>
+    </div>
+    <div class="home__caption">Bạn có muốn in hoá đơn không?</div>
+  </div>
+
+  <div class="home__btns">
+    <div class="home__actions home__actions_left">
+      <div class="home__action hidden">100 000</div>
+      <div class="home__action hidden">500 000</div>
+      <div class="home__action hidden">1000 000</div>
+      <div class="home__action hidden">1 500 000</div>
+    </div>
+    <div class="home__actions home__actions_right">
+      <div class="home__action hidden">3 000 000</div>
+      <div class="home__action " (click)="confirm()">{{a.actions6}}</div>
+      <div class="home__action " (click)="no()">{{a.actions7}}</div>
+      <div class="home__action " (click)="cancel()">{{a.actions8}}</div>
+    </div>
+  </div>
+</div>

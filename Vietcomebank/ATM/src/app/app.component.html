@@ -1,0 +1,40 @@
+<div class="app">
+  <div class="app__link">
+    <a href="" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+    <a href="" [routerLink]="['/pincode']" routerLinkActive="router-link-active">Code</a>
+    <a href="" [routerLink]="['/screensaver']" routerLinkActive="router-link-active">ScreenSaver</a>
+    <a href="" [routerLink]="['/language']" routerLinkActive="router-link-active">Language</a>
+    <a href="" [routerLink]="['/cashout-home']" routerLinkActive="router-link-active">Cashout Home</a>
+    <a href="" [routerLink]="['/cashout-input']" routerLinkActive="router-link-active">Cashout Input</a>
+    <a href="" [routerLink]="['/cashout-confirm']" routerLinkActive="router-link-active">Cashout Confirm</a>
+    <a href="" [routerLink]="['/tranfers']" routerLinkActive="router-link-active">Tranfers</a>
+  </div>
+
+  <div class="app__container">
+
+    <div class="app__header">
+      <div class="name_by_languages">
+        <div class="name_by_language vietnamese__name">{{a}}</div>
+      </div>
+
+      <div class="logo"><img src="/assets/image/logofull.png" alt="" class="logo_img"></div>
+    </div>
+
+    <router-outlet></router-outlet>
+
+    <div class="keyboard">
+      <div class="keyboard__numbers">
+        <div class="keyboard__number" *ngFor='let in of counter(9) ;let i = index' >{{i+1}}</div>
+        <div class="keyboard__number">0</div>
+
+      </div>
+      <div class="keyboard__actions">
+        <div class="keyboard__action keyboard_clear"  (click)="clearBtn()">clear</div>
+        <div class="keyboard__action keyboard_cancel" (click)="cancelBtn()">cancel</div>
+        <div class="keyboard__action keyboard_enter" (click)="enterBtn()">enter</div>
+        <div class="keyboard__action keyboard_empty"></div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,21 @@
+@import "../../styles.scss";
+
+.pincode__container {
+  @include backgroundStyle();
+  padding-top: 13rem;
+
+  @include baseStyle();
+
+  .home__guide {
+    .pincode__input {
+      margin-top: 1.5rem;
+      .input {
+        height: 3.5rem;
+        border: none;
+        background: rgba(255, 255, 255, 0.599);
+        outline: none;
+        text-align: center;
+      }
+    }
+  }
+}

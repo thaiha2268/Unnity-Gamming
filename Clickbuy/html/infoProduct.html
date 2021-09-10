@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clickbuy - Hệ thống bán lẻ điện thoại di động toàn quốc</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/product.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+</head>
+
+<body class="grid">
+  <header class="navbar">
+    <div class="navbar-content grid wide">
+      <a href="" class="navbar__logo">
+        <img src="https://clickbuy.com.vn/clickbuy.png" alt="" class="img-logo" />
+      </a>
+      <div class="navbar-search-bar">
+        <div class="search-bar__branch">
+          <div class="branch-display">Hà Nội</div>
+          <ul class="branch-list" hidden>
+            <li class="branch-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <a href="">Hà Nội</a>
+            </li>
+            <li class="branch-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <a href="">Đà Nẵng</a>
+            </li>
+            <li class="branch-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <a href="">Hồ Chí Minh</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="search-bar__input">
+          <input type="text" placeholder="Bạn cần tìm sản phẩm gì" id="input-search-bar" class="input-search-bar" />
+          <button class="button-search-bar" type="submit">
+            <i class="fab fa-searchengin fa-2x"></i>
+          </button>
+        </div>
+      </div>
+
+      <ul class="navbar-list-categorize">
+        <li class="categorize-item item-phone">
+          <div class="cate-item__display">
+            <i class="fas fa-mobile fa-2x"></i>
+            <div class="categorize-item__title">Điện thoại</div>
+          </div>
+          <ul class="cate-item__hidden">
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="categorize-item item-tablet">
+          <div class="cate-item__display">
+            <i class="fas fa-tablet fa-2x"></i>
+            <div class="categorize-item__title">Table</div>
+          </div>
+          <ul class="cate-item__hidden">
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="categorize-item item-laptop">
+          <div class="cate-item__display">
+            <i class="fas fa-laptop fa-2x"></i>
+            <div class="categorize-item__title">Laptop</div>
+          </div>
+          <ul class="cate-item__hidden">
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="categorize-item item-clock">
+          <div class="cate-item__display">
+            <i class="fas fa-clock fa-2x"></i>
+            <div class="categorize-item__title">Đồng Hồ</div>
+          </div>
+          <ul class="cate-item__hidden">
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="categorize-item item-used">
+          <div class="cate-item__display">
+            <i class="fas fa-mobile-alt fa-2x"></i>
+            <div class="categorize-item__title">Hàng Cũ</div>
+          </div>
+          <ul class="cate-item__hidden">
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="categorize-item item-accessories">
+          <div class="cate-item__display">
+            <i class="fas fa-headphones fa-2x"></i>
+            <div class="categorize-item__title">Phụ Kiện</div>
+          </div>
+          <ul class="cate-item__hidden">
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="categorize-item item-service">
+          <div class="cate-item__display">
+            <i class="fas fa-tools fa-2x"></i>
+            <div class="categorize-item__title">Sửa chữa</div>
+          </div>
+          <ul class="cate-item__hidden">
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="categorize-item item-news">
+          <div class="cate-item__display">
+            <i class="fas fa-newspaper fa-2x"></i>
+            <div class="categorize-item__title">Tin Tức</div>
+          </div>
+          <ul class="cate-item__hidden">
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="categorize-item item-promotion">
+          <div class="cate-item__display">
+            <i class="fas fa-bell fa-2x"></i>
+            <div class="categorize-item__title">Khuyến Mãi</div>
+          </div>
+          <ul class="cate-item__hidden">
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+            <li class="cate-item-child">
+              <a href="">Iphone</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="grid container directory-link">
+    <ul class="grid wide directory-link-list">
+      <li class="directory-link-item"><a href="">trang chủ</a></li>
+      <li class="directory-link-item"><a href="">đồng hồ</a></li>
+      <li class="directory-link-item"><a href="">apple watch</a></li>
+    </ul>
+  </div>
+
+  <div class="layer">
+    <div class="layer-display layer-display-right">
+      <div class="layer-list layer-list-display">
+        <div class="layer-item">
+          <div class="item-display" onclick="openAndExitMap(true,0);">
+            <img src="https://kerina.com.vn/wp-content/uploads/2021/03/map.png" alt="">
+          </div>
+        </div>
+
+        <div class="layer-item">
+          <div class="item-display" onclick="openAndExitMap(true,1);">
+            <img src="https://kerina.com.vn/wp-content/uploads/2021/03/map.png" alt="">
+          </div>
+        </div>
+
+        <div class="layer-item">
+          <div class="item-display">
+            <img src="https://kerina.com.vn/wp-content/uploads/2021/03/map.png" alt="">
+          </div>
+        </div>
+
+        <div class="layer-item">
+          <div class="item-display">
+            <img src="https://kerina.com.vn/wp-content/uploads/2021/03/map.png" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- <div class="layer-display layer-display-left">
+      <div class="layer-list layer-list-display">
+        <div class="layer-item">
+          <div class="item-display" onclick="openAndExitMap(true,0);">
+            <img src="https://kerina.com.vn/wp-content/uploads/2021/03/map.png" alt="">
+          </div>
+        </div>
+
+        <div class="layer-item">
+          <div class="item-display" onclick="openAndExitMap(true,1);">
+            <img src="https://kerina.com.vn/wp-content/uploads/2021/03/map.png" alt="">
+          </div>
+        </div>
+
+        <div class="layer-item">
+          <div class="item-display">
+            <img src="https://kerina.com.vn/wp-content/uploads/2021/03/map.png" alt="">
+          </div>
+        </div>
+
+        <div class="layer-item">
+          <div class="item-display" >
+            <img src="https://kerina.com.vn/wp-content/uploads/2021/03/map.png" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div> -->
+
+    <div class="layer-hidden">
+      <div class="layer-list layer-list-hidden">
+        <div class="item-hidden layer-item-location">
+          <div class="layer-content item-map">
+            <div class="branches-tab">
+              <div class="title-list">
+                <span>các chi nhánh Clickbuy miền bắc</span>
+              </div>
+
+              <div class="list-of-branches">
+                <div class="branche" onclick="selector(0);">
+                  <div class="address-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_building.svg" alt="">
+                    <span>111 Trần Đăng Ninh</span>
+                  </div>
+                  <div class="address-detail-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_location.svg" alt="">
+                    <span>111 Trần Đăng Ninh, Dịch Vọng, Cầu Giấy, Hà Nội, Việt Name</span>
+                  </div>
+                  <div class="phone-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_call.svg" alt="">
+                    <span>0976732468</span>
+                  </div>
+                  <div class="link-to-ggmap">
+                    <a href="https://goo.gl/maps/GCjE7QA1BCqfhhTd8">Xem trên Google Maps</a>
+                  </div>
+                </div>
+                <div class="branche" onclick="selector(1);">
+                  <div class="address-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_building.svg" alt="">
+                    <span>111 Trần Đăng Ninh</span>
+                  </div>
+                  <div class="address-detail-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_location.svg" alt="">
+                    <span>111 Trần Đăng Ninh, Dịch Vọng, Cầu Giấy, Hà Nội, Việt Name</span>
+                  </div>
+                  <div class="phone-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_call.svg" alt="">
+                    <span>0976732468</span>
+                  </div>
+                  <div class="link-to-ggmap">
+                    <a href="https://goo.gl/maps/GCjE7QA1BCqfhhTd8">Xem trên Google Maps</a>
+                  </div>
+                </div>
+                <div class="branche" onclick="selector(2);">
+                  <div class="address-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_building.svg" alt="">
+                    <span>111 Trần Đăng Ninh</span>
+                  </div>
+                  <div class="address-detail-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_location.svg" alt="">
+                    <span>111 Trần Đăng Ninh, Dịch Vọng, Cầu Giấy, Hà Nội, Việt Name</span>
+                  </div>
+                  <div class="phone-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_call.svg" alt="">
+                    <span>0976732468</span>
+                  </div>
+                  <div class="link-to-ggmap">
+                    <a href="https://goo.gl/maps/GCjE7QA1BCqfhhTd8">Xem trên Google Maps</a>
+                  </div>
+                </div>
+                <div class="branche" onclick="selector(3);">
+                  <div class="address-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_building.svg" alt="">
+                    <span>111 Trần Đăng Ninh</span>
+                  </div>
+                  <div class="address-detail-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_location.svg" alt="">
+                    <span>111 Trần Đăng Ninh, Dịch Vọng, Cầu Giấy, Hà Nội, Việt Name</span>
+                  </div>
+                  <div class="phone-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_call.svg" alt="">
+                    <span>0976732468</span>
+                  </div>
+                  <div class="link-to-ggmap">
+                    <a href="https://goo.gl/maps/GCjE7QA1BCqfhhTd8">Xem trên Google Maps</a>
+                  </div>
+                </div>
+                <div class="branche" onclick="selector(4);">
+                  <div class="address-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_building.svg" alt="">
+                    <span>111 Trần Đăng Ninh</span>
+                  </div>
+                  <div class="address-detail-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_location.svg" alt="">
+                    <span>111 Trần Đăng Ninh, Dịch Vọng, Cầu Giấy, Hà Nội, Việt Name</span>
+                  </div>
+                  <div class="phone-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_call.svg" alt="">
+                    <span>0976732468</span>
+                  </div>
+                  <div class="link-to-ggmap">
+                    <a href="https://goo.gl/maps/GCjE7QA1BCqfhhTd8">Xem trên Google Maps</a>
+                  </div>
+                </div>
+                <div class="branche" onclick="selector(5);">
+                  <div class="address-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_building.svg" alt="">
+                    <span>111 Trần Đăng Ninh</span>
+                  </div>
+                  <div class="address-detail-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_location.svg" alt="">
+                    <span>111 Trần Đăng Ninh, Dịch Vọng, Cầu Giấy, Hà Nội, Việt Name</span>
+                  </div>
+                  <div class="phone-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_call.svg" alt="">
+                    <span>0976732468</span>
+                  </div>
+                  <div class="link-to-ggmap">
+                    <a href="https://goo.gl/maps/GCjE7QA1BCqfhhTd8">Xem trên Google Maps</a>
+                  </div>
+                </div>
+                <div class="branche" onclick="selector(6);">
+                  <div class="address-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_building.svg" alt="">
+                    <span>111 Trần Đăng Ninh</span>
+                  </div>
+                  <div class="address-detail-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_location.svg" alt="">
+                    <span>111 Trần Đăng Ninh, Dịch Vọng, Cầu Giấy, Hà Nội, Việt Name</span>
+                  </div>
+                  <div class="phone-branche">
+                    <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_call.svg" alt="">
+                    <span>0976732468</span>
+                  </div>
+                  <div class="link-to-ggmap">
+                    <a href="https://goo.gl/maps/GCjE7QA1BCqfhhTd8">Xem trên Google Maps</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="map-tab">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3723.878599550038!2d105.793589!3d21.037543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab378b3001d3%3A0xb284d77b0d5508d5!2zMTExIFRy4bqnbiDEkMSDbmcgTmluaCwgROG7i2NoIFbhu41uZywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2sus!4v1626970309295!5m2!1svi!2sus"
+                width="100%" height="100.09%" style="border:0;" allowfullscreen="" loading="" class="map"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3723.878599550038!2d105.793589!3d21.037543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab378b3001d3%3A0xb284d77b0d5508d5!2zMTExIFRy4bqnbiDEkMSDbmcgTmluaCwgROG7i2NoIFbhu41uZywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2sus!4v1626970309295!5m2!1svi!2sus"
+                width="100%" height="100.09%" style="border:0;" allowfullscreen="" loading="" class="map"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3723.878599550038!2d105.793589!3d21.037543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab378b3001d3%3A0xb284d77b0d5508d5!2zMTExIFRy4bqnbiDEkMSDbmcgTmluaCwgROG7i2NoIFbhu41uZywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2sus!4v1626970309295!5m2!1svi!2sus"
+                width="100%" height="100.09%" style="border:0;" allowfullscreen="" loading="" class="map"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3723.878599550038!2d105.793589!3d21.037543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab378b3001d3%3A0xb284d77b0d5508d5!2zMTExIFRy4bqnbiDEkMSDbmcgTmluaCwgROG7i2NoIFbhu41uZywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2sus!4v1626970309295!5m2!1svi!2sus"
+                width="100%" height="100.09%" style="border:0;" allowfullscreen="" loading="" class="map"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3723.878599550038!2d105.793589!3d21.037543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab378b3001d3%3A0xb284d77b0d5508d5!2zMTExIFRy4bqnbiDEkMSDbmcgTmluaCwgROG7i2NoIFbhu41uZywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2sus!4v1626970309295!5m2!1svi!2sus"
+                width="100%" height="100.09%" style="border:0;" allowfullscreen="" loading="" class="map"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3723.878599550038!2d105.793589!3d21.037543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab378b3001d3%3A0xb284d77b0d5508d5!2zMTExIFRy4bqnbiDEkMSDbmcgTmluaCwgROG7i2NoIFbhu41uZywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2sus!4v1626970309295!5m2!1svi!2sus"
+                width="100%" height="100.09%" style="border:0;" allowfullscreen="" loading="" class="map"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3723.878599550038!2d105.793589!3d21.037543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab378b3001d3%3A0xb284d77b0d5508d5!2zMTExIFRy4bqnbiDEkMSDbmcgTmluaCwgROG7i2NoIFbhu41uZywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2sus!4v1626970309295!5m2!1svi!2sus"
+                width="100%" height="100.09%" style="border:0;" allowfullscreen="" loading="" class="map"></iframe>
+
+            </div>
+          </div>
+
+          <div class="button-exit-map" onclick="openAndExitMap(false,0);">
+            <i class="fas fa-times-circle fa-4x"></i>
+          </div>
+
+        </div>
+
+        <div class="item-hidden layer-item-advise">
+          <div class="layer-content item-advise">
+            <div class="title">
+              <span>Vui lòng để lại số điện thoại, chúng tôi sẽ gọi lại ngay sau 5 phút.</span>
+            </div>
+
+            <div class="request-advise">
+              <div class="request-icon">
+                <img src="https://cdn.autoads.asia/maxlead/1.6.x/Content/images/widget_icon_call.svg" alt="">
+              </div>
+
+              <div class="request-input">
+                <input type="tel" name="" id="" placeholder="Số điện thoại của bạn...">
+              </div>
+
+              <div class="request-button">
+                Yêu cầu gọi lại
+              </div>
+            </div>
+            <div class="request-mes">Vui lòng nhập số điện thoại</div>
+
+            <div class="seperate-in-advise-tab">
+              <hr style="height: 2px; width: 13rem;" align="right">
+              <span style="padding: 0 5px;">Hoặc</span>
+              <hr style="height: 2px; width: 13rem;" align="left">
+            </div>
+            <div class="hotline-title">
+              Hoặc liên hệ với chúng tôi theo hotline:
+            </div>
+            <div class="hotline-title-2">Clickbuy</div>
+            <div class="hotline-number">
+              0966062468
+            </div>
+          </div>
+
+          <div class="button-exit-map" onclick="openAndExitMap(false,1);">
+            <i class="fas fa-times-circle fa-2x"></i>
+          </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <section class="grid wide container">
+    <div class="row no-gutters main-detail">
+      <div class="main-detail__top">
+        <div class="main-detail__top-left">
+          <div class="main-deatail-top-left__p-name">
+            Apple Watch Series 3 Lte 38mm – Mới chưa Active
+          </div>
+          <div class="main-deatail-top-left__p-rate">
+            <span class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </span>
+            <a href="">(16 đánh giá)</a>
+          </div>
+        </div>
+        <div class="main-detail__top-right">
+          <div class="main-deatail-top-right__like">
+            <i class="fas fa-thumbs-up"></i>
+            <span>Like</span>
+            <span>0</span>
+          </div>
+          <div class="main-deatail-top-right__share">Share</div>
+        </div>
+      </div>
+
+      <div class="row no-gutters main-detail__bottom">
+        <div class="col c-5 main-detail-item main-detail__bottom-left">
+          <div class="item-left-image">
+            <img src="https://clickbuy.com.vn/uploads/2021/04/AW-3-600x600-1.jpg" alt="" />
+          </div>
+          <div class="row no-gutters left-bar-review-list">
+            <div class="col c-3 left-bar-review-item">
+              <div class="item-child">
+                <i class="fas fa-images"></i>
+                <div>thư viện</div>
+              </div>
+            </div>
+            <div class="col c-3 left-bar-review-item">
+              <div class="item-child">
+                <i class="fas fa-film"></i>
+                <div>video</div>
+              </div>
+            </div>
+            <div class="col c-3 left-bar-review-item">
+              <div class="item-child">
+                <i class="far fa-newspaper"></i>
+                <div>tin tức</div>
+              </div>
+            </div>
+            <div class="col c-3 left-bar-review-item">
+              <div class="item-child">
+                <i class="far fa-comments"></i>
+                <div>đánh giá</div>
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters left-bar-description-list">
+            <div class="left-bar-description-item item-title">
+              Mô tả sản phẩm
+            </div>
+            <div class="left-bar-description-item item-des">
+              Sản phẩm zin nguyên bản mới 100%, có bản Đã Active và bản Chưa Active
+            </div>
+          </div>
+        </div>
+
+        <div class="col c-4 main-detail-item main-detail__bottom-middle">
+          <div class="middle-bar-item-banner1">
+            <a href="https://clickbuy.com.vn/chinh-sach-bao-hanh-iphone-ipad/"><img
+                src="https://uqoojcos5nobj.vcdn.cloud/uploads/2021/05/roivo2.jpg" alt="" /></a>
+          </div>
+
+          <div class="middle-bar-item-price">
+            <span class="price-after"> 6,590,000 đ </span>
+            <span class="price-before">7,490,000 đ</span>
+          </div>
+
+          <div class="middle-bar-item-ship">
+            Clickbuy Now - Giao hàng siêu tốc 2h
+            <a href="https://clickbuy.com.vn/mua-online-giao-hang-mien-phi-trong-2-gio/">Chi tiết</a>
+          </div>
+
+          <div class="row no-gutters middle-bar-item-classify">
+            <div class="col p-classify-item">
+              <div class="p-color">Gold</div>
+              <div class="p-price-before">7,490,000 đ</div>
+              <div class="p-price-after">6,590,000 đ</div>
+            </div>
+            <div class="col p-classify-item">
+              <div class="p-color">Gold</div>
+              <div class="p-price-before">7,490,000 đ</div>
+              <div class="p-price-after">6,590,000 đ</div>
+            </div>
+            <div class="col p-classify-item">
+              <div class="p-color">Gold</div>
+              <div class="p-price-before">7,490,000 đ</div>
+              <div class="p-price-after">6,590,000 đ</div>
+            </div>
+            <div class="col p-classify-item">
+              <div class="p-color">Gold</div>
+              <div class="p-price-before">7,490,000 đ</div>
+              <div class="p-price-after">6,590,000 đ</div>
+            </div>
+            <div class="col p-classify-item">
+              <div class="p-color">Gold</div>
+              <div class="p-price-before">7,490,000 đ</div>
+              <div class="p-price-after">6,590,000 đ</div>
+            </div>
+          </div>
+
+          <div class="middle-bar-item-form">
+            <div class="p-cb-item-title">Hình thức</div>
+            <div class="p-cb-item">
+              <select name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="middle-bar-item-guarantee">
+            <div class="p-cb-item-title">bảo hành</div>
+            <div class="p-cb-item">
+              <select name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="middle-bar-item-gift">
+            <div class="gift-title">Khuyến mãi</div>
+            <div class="gift-content-list">
+              <div class="gift-content-item">
+                <i class="fas fa-gift"></i> tặng <b>dây đeo thời trang</b>
+              </div>
+              <div class="gift-content-item">
+                <i class="fas fa-gift"></i> Tặng Củ Sạc Titan khi nâng cấp bảo hành iCare Prosdvdsdvvdvdvdvdvdv
+              </div>
+              <div class="gift-content-item">
+                <i class="fas fa-gift"></i> tặng <b>dây đeo thời trang</b>
+              </div>
+              <div class="gift-content-item">
+                <i class="fas fa-gift"></i> tặng <b>dây đeo thời trang</b>
+              </div>
+              <div class="gift-content-item">
+                <i class="fas fa-gift"></i> Hỗ trợ mua Miếng dán PPF Chống xước cho Apple Watch chỉ với
+                <b>50.000đ</b>
+              </div>
+            </div>
+          </div>
+
+          <div class="row no-gutters middle-bar-pay-list pay-now-list">
+            <div class="col c-6 pay-item pay-now-item">
+              <span>
+                <div class="pay-item-icon">
+                  <i class="fas fa-money-bill-wave"></i>
+                </div>
+
+                <div class="pay-item-content">
+                  <div class="pay-item-content-title">mua ngay</div>
+                  <div class="pay-item-content-des">giao hàng tận nơi</div>
+                </div>
+              </span>
+            </div>
+
+            <div class="col c-6 pay-item add-to-card-item">
+              <span>
+                <div class="pay-item-icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="pay-item-content">
+                  <div class="pay-item-content-title">thêm vào</div>
+                  <div class="pay-item-content-des">giỏ hàng</div>
+                </div>
+              </span>
+            </div>
+          </div>
+
+          <div class="row no-gutters middle-bar-pay-list installment-list">
+            <div class="col c-6 pay-item installment-1-item">
+              <span>
+                <div class="pay-item-icon">
+                  <i class="fas fa-credit-card"></i>
+                </div>
+                <div class="pay-item-content">
+                  <div class="pay-item-content-title">trả góp</div>
+                  <div class="pay-item-content-des">qua CTY tài chính</div>
+                </div>
+              </span>
+            </div>
+            <div class="col c-6 pay-item installment-2-item">
+              <span>
+                <div class="pay-item-icon">
+                  <i class="fas fa-id-card"></i>
+                </div>
+                <div class="pay-item-content">
+                  <div class="pay-item-content-title">trả góp 0%</div>
+                  <div class="pay-item-content-des">qua thẻ tín dụng</div>
+                </div>
+              </span>
+            </div>
+          </div>
+
+          <div class="row no-gutters middle-bar-item-advise">
+            <div class="input-phone-item">
+              <input type="tel" name="" id="" class="input-phone" placeholder="Tư vấn qua số điện thoại" />
+            </div>
+            <div class="submit-advise-item">
+              <button type="submit" class="submit-advise" ">
+                  <i class=" fas fa-phone-alt "></i>
+                đăng ký tư vấn
+              </button>
+            </div>
+          </div>
+
+          <div class=" row no-gutters middle-bar-item-phone-advise ">
+            <div class=" phone-advise-top ">Gọi
+              <span class=" phone ">096.606.2468</span>
+              hoặc
+              <span class=" phone ">0246.328.9494</span>
+            </div>
+            <div class=" phone-advise-bottom ">để được tư vấn (Từ 8:00-22:00)</div>
+          </div>
+        </div>
+
+        <div class=" col c-3 main-detail-item main-detail__bottom-right ">
+          <div class=" item-right item-right-commitment ">
+            <h3 class=" item-right-title ">clickbuy cam kết</h3>
+
+            <div class=" item-right-content ">
+              <!-- <ul class=" item-right-content-list ">
+                  <li class=" item-right-content-item ">
+                    <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                    <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                  </li>
+                  <li class=" item-right-content-item ">
+                    <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                    <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                  </li>
+                  <li class=" item-right-content-item ">
+                    <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                    <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                  </li>
+                  <li class=" item-right-content-item ">
+                    <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                    <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                  </li>
+                  <li class=" item-right-content-item ">
+                    <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                    <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                  </li>
+                  <li class=" item-right-content-item ">
+                    <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                    <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                  </li>
+                  <li class=" item-right-content-item ">
+                    <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                    <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                  </li>
+                </ul> -->
+            </div>
+          </div>
+          <div class=" item-right item-right-shop-system ">
+            <h3 class=" item-right-title ">hệ thống cửa hàng</h3>
+
+            <div class=" item-right-content ">
+              <ul class=" item-right-content-list ">
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-map-marked-alt "></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class=" item-right item-right-installment-offer ">
+            <h3 class=" item-right-title ">ưu đãi trả góp</h3>
+
+            <div class=" item-right-content ">
+              <ul class=" item-right-content-list ">
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-check-circle "></i></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-check-circle "></i></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-check-circle "></i></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-check-circle "></i></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-check-circle "></i></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-check-circle "></i></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+                <li class=" item-right-content-item ">
+                  <span class=" item-icon "><i class=" fas fa-check-circle "></i></i></i></span>
+                  <span class=" item-text ">111 Trần Đăng Ninh, Cầu Giấy, Hà Nội (09.7673.2468)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class=" item-right item-right-payment-method ">
+            <h3 class=" item-right-title ">phương thức thanh toán</h3>
+
+            <div class=" item-right-content ">
+              <ul class=" item-right-content-list item-payment-method ">
+                <li class=" item-right-content-item ">
+                  <img src=" https://clickbuy.com.vn/assets/visa.png " alt=" ">
+                </li>
+                <li class=" item-right-content-item ">
+                  <img src=" https://clickbuy.com.vn/assets/mastercard.png " alt=" ">
+                </li>
+                <li class=" item-right-content-item ">
+                  <img src=" https://clickbuy.com.vn/assets/internetbanking.png " alt=" ">
+                </li>
+                <li class=" item-right-content-item ">
+                  <img src=" https://clickbuy.com.vn/assets/tragop.png " alt=" ">
+                </li>
+                <li class=" item-right-content-item ">
+                  <img src=" https://clickbuy.com.vn/assets/tienmat.png " alt=" ">
+                </li>
+                <li class=" item-right-content-item ">
+                  <img src=" https://clickbuy.com.vn/assets/visa.png " alt=" ">
+                </li>
+                <li class=" item-right-content-item ">
+                  <img src=" https://clickbuy.com.vn/assets/visa.png " alt=" ">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=" row no-gutters additional-details ">
+      <div class=" col c-8 additional-details-left ">
+        <div class=" overview-bar-child overview-rate-bar ">
+
+          <div class=" overview-bar-child__title ">
+            đánh giá & nhận xét Apple Watch Series 3 Lte 38mm – Mới chưa Active
+          </div>
+
+          <div class=" row no-gutters overview-rate-bar__content ">
+
+            <div class=" col c-4 overview-item overview-item-left ">
+              <div class=" overview-item-child ">
+                <div class=" total-star ">
+                  4.44 <i class=" fas fa-star "></i>
+                </div>
+                <div class=" total-number-comment ">
+                  16 đánh giá & nhận xét
+                </div>
+              </div>
+            </div>
+
+            <div class=" col c-4 overview-item overview-item-middle ">
+              <ul class=" slide-star-list ">
+                <li class=" slide-star-item ">
+                  5 sao
+                  <div class=" slide-star-item-process ">
+                    <div class=" process " style=" width:50% "></div>
+                  </div>
+                  10
+                </li>
+                <li class=" slide-star-item ">
+                  4 sao
+                  <div class=" slide-star-item-process ">
+                    <div class=" process " style=" width:50% "></div>
+                  </div>
+                  10
+                </li>
+                <li class=" slide-star-item ">
+                  3 sao
+                  <div class=" slide-star-item-process ">
+                    <div class=" process " style=" width:20% "></div>
+                  </div>
+                  10
+                </li>
+                <li class=" slide-star-item ">
+                  2 sao
+                  <div class=" slide-star-item-process ">
+                    <div class=" process " style=" width:100% "></div>
+                  </div>
+                  10
+                </li>
+                <li class=" slide-star-item ">
+                  1 sao
+                  <div class=" slide-star-item-process ">
+                    <div class=" process " style=" width:50% "></div>
+                  </div>
+                  10
+                </li>
+              </ul>
+            </div>
+
+            <div class=" col c-4 overview-item overview-item-right ">
+              <div class=" overview-item-child "><a href=" ">gửi đánh giá</a></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class=" overview-bar-child overview-feedback-bar ">
+          <div class=" overview-bar-child__title overview-feedback-bar__title ">
+            16 đánh giá cho Apple Watch Series 3 Lte 38mm – Mới chưa Active
+          </div>
+
+          <div class=" row no-gutters overview-feedback-bar__content ">
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class=" col c-4 additional-details-right ">
+        <div class=" overview-bar-child overview-specifications-bar ">
+          <div class=" overview-bar-child__title ">
+            thông số kỹ thuật
+          </div>
+
+          <div class=" row no-gutters overview-specifications-bar__content ">
+            <table>
+              <tr>
+                <td class=" item-name ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+                <td class=" item-parameter ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+              </tr>
+              <tr>
+                <td class=" item-name ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+                <td class=" item-parameter ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+              </tr>
+              <tr>
+                <td class=" item-name ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+                <td class=" item-parameter ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+              </tr>
+              <tr>
+                <td class=" item-name ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+                <td class=" item-parameter ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+              </tr>
+              <tr>
+                <td class=" item-name ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+                <td class=" item-parameter ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+              </tr>
+              <tr>
+                <td class=" item-name ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+                <td class=" item-parameter ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+              </tr>
+              <tr>
+                <td class=" item-name ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+                <td class=" item-parameter ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+              </tr>
+              <tr>
+                <td class=" item-name ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+                <td class=" item-parameter ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+              </tr>
+              <tr>
+                <td class=" item-name ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+                <td class=" item-parameter ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+              </tr>
+              <tr>
+                <td class=" item-name ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+                <td class=" item-parameter ">
+                  <div>độ phân giải màn hình</div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class=" overview-bar-child overview-relate-product-bar ">
+          <div class=" overview-bar-child__title ">
+            sản phẩm tương tự
+          </div>
+
+          <div class=" overview-relate-product__content ">
+            <ul>
+              <li>
+                <div class=" top ">
+                  <div class=" relate-produt-image ">
+                    <img src=" https://uqoojcos5nobj.vcdn.cloud/uploads/2021/04/thumb_S6-GPS_2-300x300.jpg " alt=" ">
+                  </div>
+
+                  <div class=" relate-produt-info ">
+                    <div class=" p-info-item p-name ">Apple Watch Series 6 44mm LTE</div>
+                    <div class=" p-info-item p-price ">12,790,000 đ</div>
+                    <div class=" p-info-item p-rate ">
+                      <div class=" p-rate__star ">
+                        <i class=" fas fa-star "></i>
+                        <i class=" fas fa-star "></i>
+                        <i class=" fas fa-star "></i>
+                        <i class=" fas fa-star "></i>
+                      </div>
+                      <div class=" p-rate__total-number-rate ">(16 đánh giá)</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" bottom ">
+                  <div class=" p-ship-icon "><i class=" fas fa-motorcycle "></i></div>
+                  <div class=" p-ship-content ">clickbuynow - giao hàng 2h</div>
+                </div>
+              </li>
+
+              <li>
+                <div class=" top ">
+                  <div class=" relate-produt-image ">
+                    <img src=" https://uqoojcos5nobj.vcdn.cloud/uploads/2021/04/thumb_S6-GPS_2-300x300.jpg " alt=" ">
+                  </div>
+
+                  <div class=" relate-produt-info ">
+                    <div class=" p-info-item p-name ">Apple Watch Series 6 44mm LTE</div>
+                    <div class=" p-info-item p-price ">12,790,000 đ</div>
+                    <div class=" p-info-item p-rate ">
+                      <div class=" p-rate__star ">
+                        <i class=" fas fa-star "></i>
+                        <i class=" fas fa-star "></i>
+                        <i class=" fas fa-star "></i>
+                        <i class=" fas fa-star "></i>
+                      </div>
+                      <div class=" p-rate__total-number-rate ">(16 đánh giá)</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" bottom ">
+                  <div class=" p-ship-icon "><i class=" fas fa-motorcycle "></i></div>
+                  <div class=" p-ship-content ">clickbuynow - giao hàng 2h</div>
+                </div>
+              </li>
+              
+              <li>
+                <div class=" top ">
+                  <div class=" relate-produt-image ">
+                    <img src=" https://uqoojcos5nobj.vcdn.cloud/uploads/2021/04/thumb_S6-GPS_2-300x300.jpg " alt=" ">
+                  </div>
+
+                  <div class=" relate-produt-info ">
+                    <div class=" p-info-item p-name ">Apple Watch Series 6 44mm LTE</div>
+                    <div class=" p-info-item p-price ">12,790,000 đ</div>
+                    <div class=" p-info-item p-rate ">
+                      <div class=" p-rate__star ">
+                        <i class=" fas fa-star "></i>
+                        <i class=" fas fa-star "></i>
+                        <i class=" fas fa-star "></i>
+                        <i class=" fas fa-star "></i>
+                      </div>
+                      <div class=" p-rate__total-number-rate ">(16 đánh giá)</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" bottom ">
+                  <div class=" p-ship-icon "><i class=" fas fa-motorcycle "></i></div>
+                  <div class=" p-ship-content ">clickbuynow - giao hàng 2h</div>
+                </div>
+              </li>
+              
+                                        <li>
+                <div class=" top ">
+                  <div class=" relate-produt-image ">
+                    <img src=" https://uqoojcos5nobj.vcdn.cloud/uploads/2021/04/thumb_S6-GPS_2-300x300.jpg " alt=" ">
+                  </div>
+
+                  <div class=" relate-produt-info ">
+                    <div class=" p-info-item p-name ">Apple Watch Series 6 44mm LTE</div>
+                    <div class=" p-info-item p-price ">12,790,000 đ</div>
+                    <div class=" p-info-item p-rate ">
+                      <div class=" p-rate__star ">
+                        <i class=" fas fa-star "></i>
+                        <i class=" fas fa-star "></i>
+                        <i class=" fas fa-star "></i>
+                        <i class=" fas fa-star "></i>
+                      </div>
+                      <div class=" p-rate__total-number-rate ">(16 đánh giá)</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" bottom ">
+                  <div class=" p-ship-icon "><i class=" fas fa-motorcycle "></i></div>
+                  <div class=" p-ship-content ">clickbuynow - giao hàng 2h</div>
+                </div>
+              </li>
+
+                             </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class=" grid footer ">
+    <div class=" grid wide ">
+      <div class=" row no-gutters ft-row-top ">
+        <div class=" col c-3 ft-col ">
+          <div class=" ft-col-title ">thông tin</div>
+          <div class=" ft-col-link ">
+            <div class=" link-item "><a href=" ">chính sách bảo hành</a></div>
+            <div class=" link-item ">
+              <a href=" ">chính sách bảo hành iphone-ipad</a>
+            </div>
+            <div class=" link-item ">
+              <a href=" ">bảo hành xiaomi chính hãng</a>
+            </div>
+            <div class=" link-item ">
+              <a href=" ">chính sách mua hàng online</a>
+            </div>
+            <div class=" link-item "><a href=" ">mua hàng trả góp</a></div>
+            <div class=" link-item ">
+              <a href=" ">chính sách bảo mật thông tin khách hàng</a>
+            </div>
+            <div class=" link-item ">
+              <a href=" http://online.gov.vn/Home/WebDetails/16818 "><img
+                  src=" https://uqoojcos5nobj.vcdn.cloud/dathongbao.png " alt=" " /></a>
+            </div>
+          </div>
+        </div>
+        <div class=" col c-3 ft-col ">
+          <div class=" ft-col-title ">thông tin liên lạc</div>
+          <div class=" ft-col-link ">
+            <div class=" link-item ">hotline bán hàng</div>
+            <div class=" link-item item-phone ">0966.06.2468</div>
+            <div class=" link-item item-phone ">1900.633.471</div>
+            <div class=" link-item ">hotline bảo hành, kỹ thuật</div>
+            <div class=" link-item item-phone ">1900.633.471</div>
+            <div class=" link-item ">hotline hỗ trợ phần mềm</div>
+            <div class=" link-item item-phone ">096.282.4422</div>
+            <div class=" link-item ">hotline phản ánh chất lượng dịch vụ</div>
+            <div class=" link-item item-phone item-phone-special ">
+              1900.633.471
+            </div>
+          </div>
+        </div>
+        <div class=" col c-3 ft-col ">
+          <div class=" ft-col-title ">khu vực miền bắc</div>
+          <div class=" ft-col-link ">
+            <div class=" link-item ">
+              <i class=" fas fa-map-marked-alt "></i>
+              <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+              <div class=" item-phone ">0834130420</div>
+            </div>
+            <div class=" link-item ">
+              <i class=" fas fa-map-marked-alt "></i>
+              <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+              <div class=" item-phone ">0834130420</div>
+            </div>
+            <div class=" link-item ">
+              <i class=" fas fa-map-marked-alt "></i>
+              <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+              <div class=" item-phone ">0834130420</div>
+            </div>
+            <div class=" link-item ">
+              <i class=" fas fa-map-marked-alt "></i>
+              <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+              <div class=" item-phone ">0834130420</div>
+            </div>
+            <div class=" link-item ">
+              <i class=" fas fa-map-marked-alt "></i>
+              <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+              <div class=" item-phone ">0834130420</div>
+            </div>
+            <div class=" link-item ">
+              <i class=" fas fa-map-marked-alt "></i>
+              <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+              <div class=" item-phone ">0834130420</div>
+            </div>
+            <div class=" link-item ">
+              <i class=" fas fa-map-marked-alt "></i>
+              <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+              <div class=" item-phone ">0834130420</div>
+            </div>
+
+            <div id=" northern-region-hide " style=" display: none ">
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+            </div>
+            <div class=" link-item region-button " onclick=" show_hide() ">
+              Hiển thị thêm <i class=" fas fa-angle-down "></i>
+            </div>
+          </div>
+        </div>
+        <div class=" col c-3 ft-col ">
+          <div class=" ft-col-title ">khu vực miền nam</div>
+          <div class=" ft-col-link ">
+            <div class=" link-item ">
+              <i class=" fas fa-map-marked-alt "></i>
+              <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+              <div class=" item-phone ">0834130420</div>
+            </div>
+            <div class=" link-item ">
+              <i class=" fas fa-map-marked-alt "></i>
+              <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+              <div class=" item-phone ">0834130420</div>
+            </div>
+            <div class=" link-item ">
+              <i class=" fas fa-map-marked-alt "></i>
+              <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+              <div class=" item-phone ">0834130420</div>
+            </div>
+            <div class=" link-item ">
+              <i class=" fas fa-map-marked-alt "></i>
+              <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+              <div class=" item-phone ">0834130420</div>
+            </div>
+            <div class=" link-item ">
+              <i class=" fas fa-map-marked-alt "></i>
+              <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+              <div class=" item-phone ">0834130420</div>
+            </div>
+            <div id=" southen-region-hide " style=" display: none ">
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+              <div class=" link-item ">
+                <i class=" fas fa-map-marked-alt "></i>
+                <a href=" " class=" link-item ">111 trần đăng ninh, cầu giấy, hà nội</a>
+                <div class=" item-phone ">0834130420</div>
+              </div>
+            </div>
+            <div class=" link-item region-button " onclick=" show_hide2() ">
+              Hiển thị thêm <i class=" fas fa-angle-down "></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=" row no-gutters ft-row-bottom ">
+      <div>
+        © 2019 - Công ty TNHH & XNK ClickBuy. GPKD số 0106081880 do Sở KH & ĐT
+        TP Hà Nội cấp ngày 10/01/2013
+      </div>
+    </div>
+  </footer>
+  <script type=" text/javascript" src="../js/infoProduct.js"></script>
+                <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+</body>
+
+</html>

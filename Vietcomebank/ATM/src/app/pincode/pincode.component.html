@@ -1,0 +1,25 @@
+<div class="pincode__container" style="background-image: url(../assets/image/bg2.jpg);">
+  <div class="home__guide">
+    <div class="home__caption">Xin vui lòng nhập mã PIN</div>
+    <div class="home__notice">(Ấn Enter để đồng ý, Clear để nhập lại)</div>
+    <div class="pincode__input"><input type="password" class="input"
+      [(ngModel)]="PINTemp"
+        onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" />
+    </div>
+  </div>
+
+  <div class="home__btns">
+    <div class="home__actions home__actions_left">
+      <div class="home__action hidden">{{a.actions1}}</div>
+      <div class="home__action hidden">{{a.actions2}}</div>
+      <div class="home__action hidden">{{a.actions3}}</div>
+      <div class="home__action hidden">{{a.actions4}}</div>
+    </div>
+    <div class="home__actions home__actions_right">
+      <div class="home__action hidden">{{a.actions5}}</div>
+      <div class="home__action hidden">{{a.actions6}}</div>
+      <div class="home__action" (click)="navigateToHome()">{{a.actions7}}</div>
+      <div class="home__action" (click)="exit()">{{a.actions8}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+@import "../../styles.scss";
+
+.name_by_languages{
+  visibility: hidden;
+}
+.screenSavers__container {
+  @include backgroundStyle();
+  @include flexCenter();
+  flex-direction: column;
+  justify-content: unset;
+  padding-top: 13rem;
+
+  .screenSavers_card {
+    @include flexCenter();
+    flex-direction: column;
+
+    .screenSavers__select {
+      width: 35rem;
+      position: relative;
+
+      .list_card {
+        .card {
+          position: relative;
+          display: none;
+          &.active {
+            display: block;
+          }
+          .card__img {
+            .img {
+              width: 100%;
+            }
+          }
+
+          .card__details {
+            @include positionFull();
+            color: rgb(196, 196, 196);
+
+            .card__detail {
+              position: absolute;
+              text-transform: uppercase;
+              left: 10%;
+            }
+            .card__num {
+              top: 54%;
+              font-size: 2.2rem;
+            }
+            .card__name {
+              top: 82%;
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+
+      .arrow_btns {
+        @include positionFull();
+        $sizeIcon: 2rem;
+
+        .arrow_btn {
+          position: absolute;
+          top: calc(50% - 2rem);
+          font-size: 2.5rem;
+          border-radius: 50%;
+          cursor: pointer;
+          background-color: #019934;
+          color: #fff;
+
+          i {
+            @include flexCenter();
+            width: $sizeIcon * 2;
+            height: $sizeIcon * 2;
+          }
+        }
+
+        .btn__left {
+          right: 103%;
+        }
+        .btn__right {
+          left: 103%;
+        }
+      }
+    }
+    .putCard_btn {
+      @include flexCenter();
+      margin-top: 2rem;
+      width: 100%;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: #242731;
+      color: #fff;
+    }
+  }
+}
