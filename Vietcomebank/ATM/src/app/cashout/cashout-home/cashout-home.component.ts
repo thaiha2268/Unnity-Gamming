@@ -6,12 +6,15 @@ import { MyServiceService } from 'src/app/service/my-service.service';
 @Component({
   selector: 'app-cashout-home',
   templateUrl: './cashout-home.component.html',
-  styleUrls: ['./cashout-home.component.scss', "../../home/home.component.scss"]
+  styleUrls: [
+    './cashout-home.component.scss',
+    '../../home/home.component.scss',
+  ],
 })
 export class CashoutHomeComponent implements OnInit {
-
   a = {} as Actions;
-  balance : number = 0;
+  balance: number = 0;
+  validSelect = true;
 
   actions: Actions[] = [
     {
@@ -45,6 +48,9 @@ export class CashoutHomeComponent implements OnInit {
       actions8: '移除卡片',
     },
   ];
+  denominations: number[] = [
+    100000, 500000, 1000000, 1500000, 2000000, 5000000,
+  ];
 
   constructor(private router: Router, private myService: MyServiceService) {}
 
@@ -53,16 +59,16 @@ export class CashoutHomeComponent implements OnInit {
     let language = this.myService.language;
 
     switch (language) {
-      case 'vn':{
+      case 'vn': {
         this.a = this.actions[0];
         break;
       }
-      case 'en':{
+      case 'en': {
         this.a = this.actions[1];
 
         break;
       }
-      case 'cn':{
+      case 'cn': {
         this.a = this.actions[2];
 
         break;
@@ -70,11 +76,20 @@ export class CashoutHomeComponent implements OnInit {
     }
   }
 
-  navigateToCashoutInput(){
+  navigateToCashoutInput() {
     this.router.navigateByUrl('/cashout-input');
   }
 
-  removeCard(){
+  navigateToCashoutConfirm(n: number) {
+    if (n <= this.balance) {
+      this.validSelect = true;
+      this.myService.receiveMoney = n;
 
+      this.router.navigateByUrl('/cashout-confirm');
+    } else {
+      this.validSelect = false;
+    }
   }
+
+  removeCard() {}
 }

@@ -11,93 +11,55 @@ import { MyServiceService } from 'src/app/service/my-service.service';
   styleUrls: ['./cashout-input.component.scss'],
 })
 export class CashoutInputComponent implements OnInit {
-  cashoutMoney: number = 0;
-  cashoutMoneyConver: String = '';
+  _tranferBalance = 0;
+  _isValidMoney = false;
+
+  _receiveMoney = '';
+  _messError = 'Số tiền phải lớn hơn 50,000VND và nhỏ hơn số dư';
+  _messSucces = 'Số tiền hợp lệ';
 
   constructor(
     private convertService: ConvertMoneyServiceService,
-    private router: Router,
     private myService: MyServiceService
   ) {}
 
-  a = {} as Actions;
+  // ngOnInit() {
+  //   // let language = this.myService.language;
 
-  actions: Actions[] = [
-    {
-      actions1: 'a',
-      actions2: 'a',
-      actions3: 'a',
-      actions4: 'a',
-      actions5: 'a',
-      actions6: 'a',
-      actions7: 'Đồng ý',
-      actions8: 'Huỷ bỏ',
-    },
-    {
-      actions1: 'a',
-      actions2: 'a',
-      actions3: 'a',
-      actions4: 'a',
-      actions5: 'a',
-      actions6: 'a',
-      actions7: 'Confirm',
-      actions8: 'Cancel',
-    },
-    {
-      actions1: 'a',
-      actions2: 'a',
-      actions3: 'a',
-      actions4: 'a',
-      actions5: 'a',
-      actions6: 'a',
-      actions7: '同意',
-      actions8: '取消',
-    },
-  ];
+  //   // switch (language) {
+  //   //   case 'vn': {
+  //   //     this.a = this.actions[0];
+  //   //     break;
+  //   //   }
+  //   //   case 'en': {
+  //   //     this.a = this.actions[1];
 
-  ngOnInit() {
-    let language = this.myService.language;
+  //   //     break;
+  //   //   }
+  //   //   case 'cn': {
+  //   //     this.a = this.actions[2];
 
-    switch (language) {
-      case 'vn': {
-        this.a = this.actions[0];
-        break;
-      }
-      case 'en': {
-        this.a = this.actions[1];
-
-        break;
-      }
-      case 'cn': {
-        this.a = this.actions[2];
-
-        break;
-      }
-    }
-  }
-
-  public convertMoney(money: String) {
-    if (money == '') {
-      this.cashoutMoneyConver = '';
-    } else {
-      this.cashoutMoneyConver = this.convertService.docso(Number(money));
-    }
-  }
-
-  public checkInput() {
-    console.log();
-  }
-  //   public isNumberKey(event: KeyboardEvent){
-  //     console.log('aaaaa');
-  // onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57) || (this.value.length >= 8))"
-  //     return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))
+  //   //     break;
+  //   //   }
+  //   // }
   // }
 
-  navigateToCashoutConfirm() {
-    console.log(this.cashoutMoney);
-    this.router.navigateByUrl(`/cashout-confirm?cashoutMoney=${this.cashoutMoney}`);
+  async ngOnInit() {
+    this._tranferBalance = this.myService.myUser.money;
+    // await this.getUsers();
   }
-  cancel() {
-    this.router.navigateByUrl('/cashout-home');
+
+  checkValidMoney(value: string) {
+    let money = Number(value);
+
+    if (money >= 50000 && money <= this.myService.myUser.money) {
+      this._isValidMoney = true;
+      this.myService.receiveMoney = money;
+      this.myService.validMoney = true;
+    } else {
+      this._isValidMoney = false;
+      this.myService.receiveMoney = 0;
+      this.myService.validMoney = false;
+    }
   }
 }

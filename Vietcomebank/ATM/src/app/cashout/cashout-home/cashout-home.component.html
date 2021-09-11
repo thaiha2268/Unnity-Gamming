@@ -1,22 +1,22 @@
 <div class="cashout-home__container" style="background-image: url(../assets/image/bg2.jpg);">
   <div class="home__guide">
     <div class="home__caption">Xin vui lòng lựa chọn dịch vụ bên em</div>
-    <div class="home__notice">(Bên em sẽ thu phí cho khách làng khác sang làng này chơi)</div>
     <div class="home__details">
-      <div class="home__detail">Số dư tk : {{balance | number}} đ</div>
+      <div class="home__detail">Số dư TK : {{balance | number}} VND</div>
     </div>
+    <div class="home__mess" *ngIf="validSelect == false">(Giao dịch vượt quá số dư)</div>
   </div>
 
   <div class="home__btns">
     <div class="home__actions home__actions_left">
-      <div class="home__action">100 000</div>
-      <div class="home__action">500 000</div>
-      <div class="home__action">1000 000</div>
-      <div class="home__action">1 500 000</div>
+      <div class="home__action" (click)="navigateToCashoutConfirm(denominations[0])">{{denominations[0] | number}}</div>
+      <div class="home__action" (click)="navigateToCashoutConfirm(denominations[1])">{{denominations[1] | number}}</div>
+      <div class="home__action" (click)="navigateToCashoutConfirm(denominations[2])">{{denominations[2] | number}}</div>
+      <div class="home__action" (click)="navigateToCashoutConfirm(denominations[3])">{{denominations[3] | number}}</div>
     </div>
     <div class="home__actions home__actions_right">
-      <div class="home__action">3 000 000</div>
-      <div class="home__action">5 000 000</div>
+      <div class="home__action" (click)="navigateToCashoutConfirm(denominations[4])">{{denominations[4] | number}}</div>
+      <div class="home__action" (click)="navigateToCashoutConfirm(denominations[5])">{{denominations[5] | number}}</div>
       <div class="home__action" (click)="navigateToCashoutInput()">{{a.actions7}}</div>
       <div class="home__action" (click)="removeCard()">{{a.actions8}}</div>
     </div>

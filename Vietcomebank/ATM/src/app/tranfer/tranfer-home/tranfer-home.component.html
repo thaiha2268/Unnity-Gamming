@@ -1,0 +1,34 @@
+<div class="tranfer-home__container" style="background-image: url(../assets/image/bg2.jpg);">
+  <div class="home__guide">
+    <div class="home__caption">Xin vui lòng nhập số tài khoản chuyển đến</div>
+    <div class="home__notice">(Ấn Enter để đồng ý, Cancel để huỷ)</div>
+
+
+    <table class="home__details">
+      <tr>
+        <td>TK chuyển đi: </td>
+        <td>{{_tranferSTK}}</td>
+      </tr>
+      <tr>
+        <td>Tên TK chuyển đi: </td>
+        <td class="home__name">{{_tranferName }}</td>
+      </tr>
+      <tr>
+        <td>TK chuyển đến: </td>
+        <td><input type="text" class="input" [(ngModel)]="_receiverSTK" #myinput (input)="checkExistSTK(myinput.value)"
+            onkeypress="return ((event.charCode !=8 && event.charCode ==0) || (event.charCode >= 48 && event.charCode <= 57))" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="home__mess" [ngClass]="{'error': _isValidSTK == false}" *ngIf=" _isValidSTK == false && _receiverSTK != ''">
+          {{_messError}}</td>
+
+          <td colspan="2" class="home__mess" [ngClass]="{'succes': _isValidSTK == true}" *ngIf=" _isValidSTK == true && _receiverSTK != ''">
+            {{_messSucces}}</td>
+      </tr>
+    </table>
+
+  </div>
+
+
+</div>

@@ -1,4 +1,4 @@
-<div class="cashout-input__container" style="background-image: url(../assets/image/bg2.jpg);">
+<div class="tranfer-money__container" style="background-image: url(../assets/image/bg2.jpg);">
   <div class="home__guide">
     <div class="home__caption">Xin vui lòng nhập số tiền chuyển khoản</div>
     <div class="home__notice">(Ấn Enter để tiếp tục, Cancel để huỷ)</div>
@@ -6,11 +6,27 @@
 
     <table class="home__details">
       <tr>
-        <td>Số dư TK :</td>
+        <td>TK chuyển đi: </td>
+        <td>{{_tranferSTK}}</td>
+      </tr>
+      <tr>
+        <td>Số dư TK chuyển đi: </td>
         <td>{{_tranferBalance | number }} VND</td>
       </tr>
       <tr>
-        <td>Số tiền :</td>
+        <td>Tên TK chuyển đi: </td>
+        <td class="home__name">{{_tranferName }}</td>
+      </tr>
+      <tr>
+        <td>TK chuyển đến: </td>
+        <td>{{_receiverSTK}}</td>
+      </tr>
+      <tr>
+        <td>Tên TK chuyển đến: </td>
+        <td class="home__name">{{_receiverName}}</td>
+      </tr>
+      <tr>
+        <td>Số tiền</td>
         <td>
           <input type="text" class="input" [(ngModel)]="_receiveMoney" #myinput (input)="checkValidMoney(myinput.value)"
             onkeypress="return ((event.charCode !=8 && event.charCode ==0) || (event.charCode >= 48 && event.charCode <= 57))" />

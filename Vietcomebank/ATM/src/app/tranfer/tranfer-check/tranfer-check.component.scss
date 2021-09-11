@@ -1,0 +1,26 @@
+@import "../../../styles.scss";
+
+.tranfer-check__container {
+  @include backgroundStyle();
+  padding-top: 13rem;
+
+  @include baseStyle();
+
+  .home__details {
+    max-width: 90%;
+    .home__name {
+      text-transform: uppercase;
+      @include textOverflow(1);
+    }
+  }
+
+  td {
+    text-align: left;
+    padding: 0.6rem 2rem;
+
+    &.home__mess {
+      text-align: center;
+      color: rgb(30, 0, 255);
+    }
+  }
+}

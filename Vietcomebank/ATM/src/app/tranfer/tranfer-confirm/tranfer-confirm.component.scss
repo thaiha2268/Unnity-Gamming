@@ -1,16 +1,15 @@
 @import "../../../styles.scss";
 
-.cashout-confirm__container {
+.tranfer-confirm__container {
   @include backgroundStyle();
   padding-top: 13rem;
 
   @include baseStyle();
-  td{
+  td {
     text-align: left;
     padding: 0.6rem 2rem;
   }
-  td:first-child  {
+  td:first-child {
     padding: 0 2rem;
   }
-
 }

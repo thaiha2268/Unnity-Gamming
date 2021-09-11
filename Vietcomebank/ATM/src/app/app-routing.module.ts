@@ -8,7 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { PincodeComponent } from './pincode/pincode.component';
 import { ScreensaverComponent } from './screensaver/screensaver.component';
 import { SelectlanguageComponent } from './selectlanguage/selectlanguage.component';
-import { TransfersComponent } from './transfers/transfers.component';
+import { TranferCheckComponent } from './tranfer/tranfer-check/tranfer-check.component';
+import { TranferConfirmComponent } from './tranfer/tranfer-confirm/tranfer-confirm.component';
+import { TranferHomeComponent } from './tranfer/tranfer-home/tranfer-home.component';
+import { TranferMoneyComponent } from './tranfer/tranfer-money/tranfer-money.component';
 
 const routes: Routes = [
   // { path: '**', component: HomeComponent },
@@ -17,11 +20,14 @@ const routes: Routes = [
   { path: 'pincode', component: PincodeComponent },
   { path: 'screensaver', component:  ScreensaverComponent},
   { path: 'language', component: SelectlanguageComponent },
-  { path: 'tranfers', component: TransfersComponent },
   { path: 'cashout-home', component: CashoutHomeComponent },
   { path: 'cashout-option', component: CashoutOptionComponent },
   { path: 'cashout-input', component: CashoutInputComponent },
   { path: 'cashout-confirm', component: CashoutConfirmComponent },
+  { path: 'tranfer-home', component: TranferHomeComponent },
+  { path: 'tranfer-money', component: TranferMoneyComponent },
+  { path: 'tranfer-check', component: TranferCheckComponent },
+  { path: 'tranfer-confirm', component: TranferConfirmComponent },
 ];
 
 @NgModule({

@@ -3,10 +3,10 @@
     <div class="screenSavers__select">
 
       <div class="list_card" #listCards>
-        <div class="card"  *ngFor="let user of users" data-id="{{ user.id }}">
+        <div [id]='i + 1' class="card" *ngFor="let user of users; let i = index;" [attr.index]="i">
           <div class="card__img"><img src="/assets/image/cardEmpty.png" alt="" class="img"></div>
           <div class="card__details">
-            <div class="card__detail card__num">{{ user.number }}</div>
+            <div class="card__detail card__num">{{ user.number }} - {{user.pincode}}</div>
             <div class="card__detail card__name">{{ user.name }}</div>
           </div>
         </div>

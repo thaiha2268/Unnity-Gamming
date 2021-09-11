@@ -23,7 +23,11 @@ export class ScreensaverComponent implements OnInit {
     private renderer: Renderer2,
     private router: Router,
     private myService: MyServiceService,
+    private el: ElementRef
   ) {}
+
+  $ = document.querySelector.bind(document);
+  $$ = document.querySelectorAll.bind(document);
 
   ngOnInit(): void {
     this.handleUsers();
@@ -32,9 +36,7 @@ export class ScreensaverComponent implements OnInit {
   async handleUsers(): Promise<any> {
     await this.getUsers();
 
-    let cardActive = document
-      .querySelectorAll('.card')[0]
-      .classList.add('active');
+    let cardActive = this.$('.card')?.classList.add('active');
   }
 
   async getUsers(): Promise<any> {
@@ -51,32 +53,38 @@ export class ScreensaverComponent implements OnInit {
     );
   }
 
-  // checkBtns(): void {
-  //   let pos = document.querySelector('.list_card')?.scrollLeft;
-  //   let btnLeft = document.querySelector('.btn__left');
-  //   let btnRight = document.querySelector('.btn__right');
-
-  //   if (pos == 0) {
-  //     // btnLeft?.hide();
-  //   }
-  // }
-
-  $ = document.querySelector.bind(document);
-  $$ = document.querySelectorAll.bind(document);
-
-  @ViewChild('listCards') listCards!: ElementRef;
-
   public scrollRight(): void {
-    let cardActive = this.$('.card.active');
-    var dataAttribute = this.$('.card.active')?.getAttribute('id');
-    console.log(dataAttribute);
+    this.actionsScroll(1);
   }
 
-  public scrollLeft(): void {}
+  public scrollLeft(): void {
+    this.actionsScroll(-1);
+  }
+
+  actionsScroll(n: number) {
+    let numberCard = this.$$('.card').length;
+    let currentIndex = Number(this.$('.card.active')?.getAttribute('index'));
+
+    if (n == 1 && currentIndex < numberCard - 1) {
+      let futureIndex = currentIndex + n;
+
+      this.$$('.card')[currentIndex].classList.remove('active');
+      this.$$('.card')[futureIndex].classList.add('active');
+
+      this.el.nativeElement.querySelector('.active').scrollIntoView();
+    } else if (n == -1 && currentIndex > 0) {
+      let futureIndex = currentIndex + n;
+
+      this.$$('.card')[currentIndex].classList.remove('active');
+      this.$$('.card')[futureIndex].classList.add('active');
+
+      this.el.nativeElement.querySelector('.active').scrollIntoView();
+    }
+  }
 
   navigateToSelectLanguage() {
     var id = this.$('.card.active')?.getAttribute('id');
     this.myService.userId = Number(id);
     this.router.navigateByUrl('/language');
- }
+  }
 }
